@@ -2,6 +2,9 @@ import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 import PropTypes from 'prop-types';
 
+// Aw snap, you gotta go inside the cart then inside the item in the cart lol 👍
+//   You cannot try and do cart item...hence nesting.  This is the ✊POWER of graphql
+
 const CURRENT_USER_QUERY = gql`
   query {
     me {
@@ -12,6 +15,13 @@ const CURRENT_USER_QUERY = gql`
       cart {
         id
         quantity
+        item {
+          id
+          price
+          image
+          title
+          description
+        }
       }
     }
   }

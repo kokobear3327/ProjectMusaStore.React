@@ -19,9 +19,19 @@ const CartItemStyles = styled.li`
   } */
 `;
 
-const CartItem = props => 
-      <CartItemStyles>{props.cartItem.id}</CartItemStyles>;
-
+const CartItem = ({ cartItem }) => (
+      <CartItemStyles>
+      <img width="100" src={cartItem.item.image} alt={cartItem.item.title} />
+      <div className="cart-item-details">
+        <h3>{cartItem.item.title}</h3> 
+        <p>{formatMoney(cartItem.item.price * cartItem.quantity)}</p>
+        {' - '}
+        <em>
+          {cartItem.quantity} &times; {formatMoney(cartItem.item.price)}
+        </em>
+      </div>
+      </CartItemStyles>
+);
 //   return (
 //     <CartItemStyles>
 //       <img width="100" src={cartItem.item.image} alt={cartItem.item.title} />
