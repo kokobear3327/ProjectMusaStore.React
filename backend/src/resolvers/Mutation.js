@@ -93,7 +93,45 @@ const Mutations = {
   signout(parent, args, ctx, info) {
     ctx.response.clearCookie('token');
     return { message: 'Peace!'}
-  }
+  },
+  async addToCart(parent, args, ctx, info) {
+    // 1.  Check if the user is signed in 👍
+    const { userId } = ctx.request;
+    // if(!userId) {
+    //   throw new Error('Bro, you are not signed in');
+    // }
+
+    // 2.  Query that users cart, you gotta do cartItems to look through all.  Look in the prisma.graphql API...
+    //   when you dig in the API, there is the whereId noise going on which makes the logic work out 👍
+    //     Try not putting await there and have fun debugging that error lol
+    const [existingCartItem] = await ctx.db.query.cartItems({
+      // isnt where great? 😆
+      where: { 
+        user: { id: userId  },
+        item: { id: args.id },
+      }
+    });
+    // 3.  Check if they already have one of said item, increment appropriately
+    if(existingCartItem) {
+      console.log('Product is already in their cart');
+      // Again, check updateCartItem in the prisma.graphql API for updateCartItem...it takes in a where argument
+      return ctx.db.mutation.updateCartItem({
+        where: { id: existingCartItem.id },
+        data: { quantity: existingCartItem.quantity + 1}
+      }, info);
+    }
+    // 4.  Create it fresh depending on aforementioned check, i.e., if its not already there in the cart
+    return ctx.db.mutation.createCartItem({
+      data: {
+        user: {
+          connect: { id: userId },
+        },
+        item: { 
+          connect: { id: args.id }
+        },
+      },
+    }, info);
+  },
 };
 
 module.exports = Mutations;

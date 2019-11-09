@@ -1,22 +1,9 @@
-enum Permission {
-  ADMIN
-  USER
-  ITEMCREATE
-  ITEMUPDATE
-  ITEMDELETE
-  PERMISSIONUPDATE
-}
-
-type User {
+type CartItem {
   id: ID! @id
-  name: String!
-  email: String! @unique
-  password: String!
-  resetToken: String
-  resetTokenExpiry: String
-  permissions: [Permission] @scalarList(strategy: RELATION)
+  quantity: Int! @default(value: 1)
+  item: Item! #belongs to item
+  user: User! #belongs to user
 }
-
 
 type Item {
   id: ID! @id
@@ -28,4 +15,25 @@ type Item {
   # createAt: DateTime!
   # updatedAt: DateTime!
   # user: User!
+}
+
+
+type User {
+  id: ID! @id
+  name: String!
+  email: String! @unique
+  password: String!
+  resetToken: String
+  resetTokenExpiry: String
+  permissions: [Permission] @scalarList(strategy: RELATION)
+  cart: [CartItem!]!
+}
+
+enum Permission {
+  ADMIN
+  USER
+  ITEMCREATE
+  ITEMUPDATE
+  ITEMDELETE
+  PERMISSIONUPDATE
 }
