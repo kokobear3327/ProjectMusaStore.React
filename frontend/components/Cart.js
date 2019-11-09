@@ -1,12 +1,14 @@
 import React from 'react';
 import { Query, Mutation } from 'react-apollo';
 import Supreme from './styles/Supreme';
-import CartItem from './CartItem'
+import CartItem from './CartItem';
+import formatMoney from '../lib/formatMoney';
+import calcTotalPrice from '../lib/calcTotalPrice';
 import CloseButton from './styles/CloseButton';
 import SickButton from './styles/SickButton';
 import gql from 'graphql-tag';
 import CartStyles from './styles/CartStyles';
-import User from './User'
+import User from './User';
 
 // So you can use adopt, an npm, to make it where you do not have to wrap multiple queries, mutations, and users.
 
@@ -49,7 +51,8 @@ const Cart = () => (
     </header>
     <ul>{me.cart.map(cartItem => <CartItem cartItem={cartItem} key={cartItem.id} />)}</ul>
   <footer>
-    <p>$17.76</p>
+{/* Holy Cow, you gotta wrap the total price in the format monies func such that its not in cents 👍 */}
+    <p>{formatMoney(calcTotalPrice(me.cart))}</p>
   </footer>
                 <SickButton>Checkout</SickButton>
               </CartStyles>

@@ -9,13 +9,15 @@ type Query {
 }
 
 type Mutation {
-  addToCart(id: ID!): CartItem
-  signup(email: String!, password: String!, name: String!): User!
-  signin(email: String!, password: String!): User!
-  signout: SuccessMessage
   createItem(title: String, description: String, price: Int, image: String, largeImage: String): Item!
   updateItem(id: ID!, title: String, description: String, price: Int): Item!
   deleteItem(id: ID!): Item
+  addToCart(id: ID!): CartItem
+  removeFromCart(id: ID!): CartItem
+  signup(email: String!, password: String!, name: String!): User!
+  signin(email: String!, password: String!): User!
+  signout: SuccessMessage
+
 }
 
 type SuccessMessage {

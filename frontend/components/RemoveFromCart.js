@@ -19,7 +19,7 @@ const BigButton = styled.button`
   border: 0;
   &:hover {
     color: ${props => props.theme.blue};
-    cursor: pointer;
+    cursor: crosshair;
   }
 `;
 
@@ -57,7 +57,7 @@ class RemoveFromCart extends React.Component {
             onClick={() => {
               removeFromCart().catch(err => alert(err.message));
             }}
-            title="Delete Item"
+            title="Remove from 🛒"
           >
             &times;
           </BigButton>

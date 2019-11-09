@@ -43,6 +43,28 @@ const Mutations = {
     // 3. Delete it!
     return ctx.db.mutation.deleteItem({ where }, info);
   },
+  async removeFromCart(parent, args, ctx, info) {
+    // 1.  Locate the cart item
+    const cartItem = await ctx.db.query.cartItem({
+      where: {
+        id: args.id
+      },
+    }, `{ id, user { id }}`
+    );
+    if(!cartItem) throw new Error('No CartItem Found!');
+    // 2.  Make sure they own that cart item
+    if(cartItem.user.id !== ctx.request.userId) {
+      throw new Error('naaawww');
+    }
+    // 3.  Delete that cart item where the prisma.graphql provides the API to do this...deleteCartItem is a mutation 
+    //   in there with a where argument
+    return ctx.db.mutation.deleteCartItem(
+      {
+      where: { id: args.id },
+      }, 
+      info 
+    );
+  },
   async signup(parent, args, ctx, info) {
     // lowercase their email
     args.email = args.email.toLowerCase();
