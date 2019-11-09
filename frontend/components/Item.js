@@ -5,6 +5,7 @@ import Title from './styles/Title';
 import ItemStyles from './styles/ItemStyles';
 import PriceTag from './styles/PriceTag';
 import formatMoney from '../lib/formatMoney';
+import AddToCart from './AddToCart';
 
 // You gotta {{}} things because the first {} is just saying its a JS object, the second is the ref 👍
 
@@ -40,7 +41,7 @@ export default class Item extends Component {
               }}>
                 <a>Write ✍️</a>
               </Link> */}
-              <button>Put in 🛒</button>
+              <AddToCart id={item.id} />
               <button>Remove from 🛒</button>
             </div>
         </ItemStyles>
