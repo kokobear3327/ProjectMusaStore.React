@@ -1,0 +1,7 @@
+endpoint: https://eu1.prisma.sh/richard-pitts/projectmusaeuserver/dev
+datamodel: datamodel.graphql
+# secret: ${env:PRISMA_SECRET}
+# This is how you create the prisma.graphql generated file:  This is hook is saying: make the prisma.graphql file after your deploy the server
+hooks: 
+  post-deploy: 
+    - graphql get-schema -p prisma
