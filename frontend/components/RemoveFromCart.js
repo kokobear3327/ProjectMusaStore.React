@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import gql from 'graphql-tag';
 import { CURRENT_USER_QUERY } from './User';
 
-// Notice you only care about getting the id for the item you are removing, need nothing else! 👍
+// Notice you only care about getting the id for the item you are removing, need nothing else! (cache removal) 👍
 //   Next step is to make a mutation and fuse this puppy into it 🐶
 
 const REMOVE_FROM_CART_MUTATION = gql`
@@ -32,10 +32,13 @@ class RemoveFromCart extends React.Component {
     id: PropTypes.string.isRequired,
   };
   // This gets called as soon as we get a response back from the server after a mutation has been performed
-  update = (cache, payload) => {
+  //   Its literally not optimistic, unless you call optimisticResponse as attribute on mutation
+  //     but whose counting.  The 👞 fits 👍
+  optimisticUpdate = (cache, payload) => {
+    console.log('Ran remove from cart updating function! 🤸‍')
     // 1. first read the cache
     const data = cache.readQuery({ query: CURRENT_USER_QUERY });
-    // 2. remove that item from the cart using filter duh 👍
+    // 2. remove that item from the cart using filter duh, after your grab the id! 👍
     const cartItemId = payload.data.removeFromCart.id;
     data.me.cart = data.me.cart.filter(cartItem => cartItem.id !== cartItemId);
     // 3. write it back to the cache
@@ -45,8 +48,10 @@ class RemoveFromCart extends React.Component {
     return (
       <Mutation
         variables={{ id: this.props.id }}
-        update={this.update}
+        update={this.optimisticUpdate}
         mutation={REMOVE_FROM_CART_MUTATION}
+        // This is where you give it what you think the server will respond with!  It will do this while promise thingy
+        //   is executed in background.
         optimisticResponse={{
           __typename: 'Mutation',
           removeFromCart: {

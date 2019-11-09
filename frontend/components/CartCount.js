@@ -3,12 +3,18 @@ import PropTypes from 'prop-types';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import styled from 'styled-components';
 
+// React transition group is how you do these animations for the cart counting
+//   You gotta do backspace-visibility else it looks janky.
+//   classNames 🙋‍excuse me?  So it gives you lots of class names beginning with count, just go with it...
+//     You can also use turns to emulate degrees in simpler terms
+//   So react cycles through the class names that are applied in sequence, producing the animation.
+//     You get enter, enter-active, exit, and exit-active
 const AnimationStyles = styled.span`
   position: relative;
   .count {
     display: block;
     position: relative;
-    transition: all 0.4s;
+    transition: all 0.7s;
     backface-visibility: hidden;
   }
   /* Initial State of the entered Dot */
@@ -27,7 +33,9 @@ const AnimationStyles = styled.span`
     transform: scale(4) rotateX(0.5turn);
   }
 `;
-
+//  So these make sure the width of the number representing items in cart is same:
+//   font-feature-settings: 'tnum';   
+//   font-variant-numeric: tabular-nums;
 const Dot = styled.div`
   background: ${props => props.theme.blue};
   color: white;
@@ -49,7 +57,7 @@ const CartCount = ({ count }) => (
         className="count"
         classNames="count"
         key={count}
-        timeout={{ enter: 400, exit: 400 }}
+        timeout={{ enter: 550, exit: 550 }}
       >
         <Dot>{count}</Dot>
       </CSSTransition>
