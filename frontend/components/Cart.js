@@ -13,10 +13,13 @@ import CartStyles from './styles/CartStyles';
 import User from './User';
 
 // So you can use adopt, an npm, to make it where you do not have to wrap multiple queries, mutations, and users.
-//   Called react-adopt:
+//   Called react-adopt:  FUCK THAT IT IS LIKE MORE CONFUSING LOL 😘 USE HOOKS INSTEAD TO AVOID NIGHTMARE(S)
 
 // const Composed = adopt({
-//   user:
+//   user: <User />,
+//   toggleCart: <Mutation mutation={TOGGLE_CART_MUTATION}
+//   />,
+//   localState: <Query query={LOCAL_STATE_QUERY} />,
 // });
 
 
