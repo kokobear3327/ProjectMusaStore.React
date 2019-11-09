@@ -5,6 +5,9 @@ import PropTypes from 'prop-types';
 import gql from 'graphql-tag';
 import { CURRENT_USER_QUERY } from './User';
 
+// Notice you only care about getting the id for the item you are removing, need nothing else! 👍
+//   Next step is to make a mutation and fuse this puppy into it 🐶
+
 const REMOVE_FROM_CART_MUTATION = gql`
   mutation removeFromCart($id: ID!) {
     removeFromCart(id: $id) {
@@ -24,6 +27,7 @@ const BigButton = styled.button`
 `;
 
 class RemoveFromCart extends React.Component {
+  // This is necessary for the cartItem.id prop to work in the CartItem.js function needed for deletion 👍
   static propTypes = {
     id: PropTypes.string.isRequired,
   };
@@ -31,7 +35,7 @@ class RemoveFromCart extends React.Component {
   update = (cache, payload) => {
     // 1. first read the cache
     const data = cache.readQuery({ query: CURRENT_USER_QUERY });
-    // 2. remove that item from the cart
+    // 2. remove that item from the cart using filter duh 👍
     const cartItemId = payload.data.removeFromCart.id;
     data.me.cart = data.me.cart.filter(cartItem => cartItem.id !== cartItemId);
     // 3. write it back to the cache
@@ -40,9 +44,9 @@ class RemoveFromCart extends React.Component {
   render() {
     return (
       <Mutation
-        mutation={REMOVE_FROM_CART_MUTATION}
         variables={{ id: this.props.id }}
         update={this.update}
+        mutation={REMOVE_FROM_CART_MUTATION}
         optimisticResponse={{
           __typename: 'Mutation',
           removeFromCart: {
@@ -59,7 +63,7 @@ class RemoveFromCart extends React.Component {
             }}
             title="Remove from 🛒"
           >
-            &times;
+            💩
           </BigButton>
         )}
       </Mutation>

@@ -796,6 +796,8 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
+ // Notice you only care about getting the id for the item you are removing, need nothing else! 👍
+//   Next step is to make a mutation and fuse this puppy into it 🐶
 
 var REMOVE_FROM_CART_MUTATION = graphql_tag__WEBPACK_IMPORTED_MODULE_4___default()(_templateObject());
 var BigButton = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button.withConfig({
@@ -827,7 +829,7 @@ function (_React$Component) {
       // 1. first read the cache
       var data = cache.readQuery({
         query: _User__WEBPACK_IMPORTED_MODULE_5__["CURRENT_USER_QUERY"]
-      }); // 2. remove that item from the cart
+      }); // 2. remove that item from the cart using filter duh 👍
 
       var cartItemId = payload.data.removeFromCart.id;
       data.me.cart = data.me.cart.filter(function (cartItem) {
@@ -847,11 +849,11 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_apollo__WEBPACK_IMPORTED_MODULE_1__["Mutation"], {
-        mutation: REMOVE_FROM_CART_MUTATION,
         variables: {
           id: this.props.id
         },
         update: this.update,
+        mutation: REMOVE_FROM_CART_MUTATION,
         optimisticResponse: {
           __typename: 'Mutation',
           removeFromCart: {
@@ -861,7 +863,7 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 42
+          lineNumber: 46
         },
         __self: this
       }, function (removeFromCart, _ref) {
@@ -877,10 +879,10 @@ function (_React$Component) {
           title: "Remove from \uD83D\uDED2",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 55
+            lineNumber: 59
           },
           __self: this
-        }, "\xD7");
+        }, "\uD83D\uDCA9");
       });
     }
   }]);
