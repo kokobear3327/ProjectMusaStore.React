@@ -1196,14 +1196,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 
@@ -1214,6 +1215,18 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+ // So StripeCheckout takes a ton of parameters...look up the documentation to see the whole list.
+//   Options include things like currency, amount, token, desription, and even bitcoin 🤔
+//   Obviously, you want to interpolate things like the amount into these arguments 👍
+// Likewise, we get an awful error it item doesn't exist, so you check with me.cart[0].item && 👍
+// So the way it works:
+//   You create a token with the CC info that is sent to Stripe who then send your token to the server
+
+function totalItems(cart) {
+  return cart.reduce(function (tally, cartItem) {
+    return tally + cartItem.quantity;
+  }, 0);
+}
 
 var TakeMyMoney =
 /*#__PURE__*/
@@ -1221,31 +1234,58 @@ function (_React$Component) {
   _inherits(TakeMyMoney, _React$Component);
 
   function TakeMyMoney() {
+    var _getPrototypeOf2;
+
+    var _this;
+
     _classCallCheck(this, TakeMyMoney);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(TakeMyMoney).apply(this, arguments));
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(TakeMyMoney)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onToken", function (res) {
+      console.log('On Token Called!');
+      console.log('this is the res:');
+      console.log(res);
+    });
+
+    return _this;
   }
 
   _createClass(TakeMyMoney, [{
     key: "render",
     value: function render() {
-      var _this = this;
+      var _this2 = this;
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_User__WEBPACK_IMPORTED_MODULE_9__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 15
+          lineNumber: 33
         },
         __self: this
       }, function (_ref) {
         var me = _ref.data.me;
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_stripe_checkout__WEBPACK_IMPORTED_MODULE_7___default.a, {
+          amount: Object(_lib_calcTotalPrice__WEBPACK_IMPORTED_MODULE_5__["default"])(me.cart),
+          name: "Project Musa",
+          description: "".concat(totalItems(me.cart), " products ordered!") // Be careful, this produces an awful bug:
+          ,
+          image: me.cart[0].item && me.cart[0].item.image,
+          stripeKey: "pk_live_grzfRYXcSWt70FeeiFIKFucz00tkYgt2an",
+          currency: "USD",
+          email: me.email,
+          token: function token(res) {
+            return _this2.onToken(res);
+          },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 15
+            lineNumber: 33
           },
           __self: this
-        }, _this.props.children);
+        }, _this2.props.children);
       });
     }
   }]);
