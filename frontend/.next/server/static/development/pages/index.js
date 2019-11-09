@@ -144,6 +144,8 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
+ // You gotta refetch the current user query else it won't update the cart appropriately when its open and you add
+//   So it would have added it on the server but that cache is all 🦆'd up, hence the refetch
 
 var ADD_TO_CART_MUTATION = graphql_tag__WEBPACK_IMPORTED_MODULE_2___default()(_templateObject());
 
@@ -172,7 +174,7 @@ function (_React$Component) {
         mutation: ADD_TO_CART_MUTATION,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 19
+          lineNumber: 21
         },
         __self: this
       }, function (addToCart, _ref) {
@@ -182,7 +184,7 @@ function (_React$Component) {
           disabled: loading,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 27
+            lineNumber: 29
           },
           __self: this
         }, "Add", loading && 'ing', " To Cart \uD83D\uDED2");
@@ -371,7 +373,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Item__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Item */ "./components/Item.js");
 /* harmony import */ var _Pagination__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Pagination */ "./components/Pagination.js");
 /* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../config */ "./config.js");
-var _jsxFileName = "/Users/Programming_Work_2/Desktop/final/frontend/components/Items.js";
+var _jsxFileName = "/Users/Programming_Work_2/Desktop/final1109/final1109/frontend/components/Items.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -535,7 +537,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_PaginationStyles__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./styles/PaginationStyles */ "./components/styles/PaginationStyles.js");
 /* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! graphql-tag */ "graphql-tag");
 /* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(graphql_tag__WEBPACK_IMPORTED_MODULE_6__);
-var _jsxFileName = "/Users/Programming_Work_2/Desktop/final/frontend/components/Pagination.js";
+var _jsxFileName = "/Users/Programming_Work_2/Desktop/final1109/final1109/frontend/components/Pagination.js";
 
 function _templateObject() {
   var data = _taggedTemplateLiteral(["\n    query PAGINATION_QUERY {\n        itemsConnection {\n            aggregate {\n                count\n            }\n        }\n    }\n"]);
@@ -687,13 +689,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(graphql_tag__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prop-types */ "prop-types");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "/Users/Programming_Work_2/Desktop/final1108postbug/final1108postbug/frontend/components/User.js";
+var _jsxFileName = "/Users/Programming_Work_2/Desktop/final1109/final1109/frontend/components/User.js";
 
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  query {\n    me {\n      id\n      email\n      name\n      permissions\n    }\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  query {\n    me {\n      id\n      email\n      name\n      permissions\n      cart {\n        id\n        quantity\n      }\n    }\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -714,7 +716,7 @@ var User = function User(props) {
     query: CURRENT_USER_QUERY,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 21
     },
     __self: this
   }), function (payload) {
@@ -722,7 +724,7 @@ var User = function User(props) {
   });
 };
 
-User.PropTypes = {
+User.propTypes = {
   children: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.func.isRequired
 };
 /* harmony default export */ __webpack_exports__["default"] = (User);
@@ -879,7 +881,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "next/link");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_Items__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Items */ "./components/Items.js");
-var _jsxFileName = "/Users/Programming_Work_2/Desktop/final/frontend/pages/index.js";
+var _jsxFileName = "/Users/Programming_Work_2/Desktop/final1109/final1109/frontend/pages/index.js";
 
 
  // parseFloat cuz its otherwise a stringy number 👍

@@ -1,10 +1,16 @@
 import React from 'react';
 import { Query, Mutation } from 'react-apollo';
-import gql from 'graphql-tag';
-import CartStyles from './styles/CartStyles';
 import Supreme from './styles/Supreme';
+import CartItem from './CartItem'
 import CloseButton from './styles/CloseButton';
 import SickButton from './styles/SickButton';
+import gql from 'graphql-tag';
+import CartStyles from './styles/CartStyles';
+import User from './User'
+
+// So you can use adopt, an npm, to make it where you do not have to wrap multiple queries, mutations, and users.
+
+// me.cart.length === 1 ? '' : 's' == Badass logic for if you have singular/plural constructs
 
 const TOGGLE_CART_MUTATION = gql`
   mutation {
@@ -20,6 +26,12 @@ const LOCAL_STATE_QUERY = gql`
 `
 
 const Cart = () => (
+  <User>
+    {({ data: { me } }) => {
+      if(!me) return null;
+      return (
+
+
   <Mutation mutation={TOGGLE_CART_MUTATION}>{(toggleCart) => (
   <Query query={LOCAL_STATE_QUERY}>
     {({data}) => console.log(data) || (
@@ -31,19 +43,22 @@ const Cart = () => (
       >
         &times;
       </CloseButton>
-      <Supreme>Your Cart</Supreme>
-      <p>You have __ Items in your cart</p>
+      <Supreme>{me.name}'s Cart</Supreme>
+      
+      <p>You got {me.cart.length} Item{me.cart.length === 1 ? '' : 's'} in your cart</p>
     </header>
-
+    <ul>{me.cart.map(cartItem => <CartItem cartItem={cartItem} key={cartItem.id} />)}</ul>
   <footer>
     <p>$17.76</p>
   </footer>
-       <SickButton>Checkout</SickButton>
-       </CartStyles>
-      )}
-      </Query>
-    )}
-    </Mutation>
+                <SickButton>Checkout</SickButton>
+              </CartStyles>
+            )}
+          </Query>
+        )}
+      </Mutation>
+    )
+    }}</User>
 );
 
 export { LOCAL_STATE_QUERY, TOGGLE_CART_MUTATION }

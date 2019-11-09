@@ -5,6 +5,8 @@ import User from './User';
 import Signout from './Signout';
 import { TOGGLE_CART_MUTATION } from './Cart'
 
+// So you wrap the User component over the whole enchilada and it gives you access to their items and what not
+
 const Nav = () => (
   <User>
     {({ data: { me } }) => (
