@@ -3,6 +3,8 @@ import gql from 'graphql-tag';
 import CartItem from './CartItem';
 import { Query, Mutation } from 'react-apollo';
 import { adopt } from 'react-adopt';
+import User from './User';
+import TakeMyMoney from './TakeMyMoney';
 // Styled-Components:
 import Supreme from './styles/Supreme';
 import formatMoney from '../lib/formatMoney';
@@ -10,7 +12,7 @@ import calcTotalPrice from '../lib/calcTotalPrice';
 import CloseButton from './styles/CloseButton';
 import SickButton from './styles/SickButton';
 import CartStyles from './styles/CartStyles';
-import User from './User';
+
 
 // So you can use adopt, an npm, to make it where you do not have to wrap multiple queries, mutations, and users.
 //   Called react-adopt:  FUCK THAT IT IS LIKE MORE CONFUSING LOL 😘 USE HOOKS INSTEAD TO AVOID NIGHTMARE(S)
@@ -69,7 +71,9 @@ const Cart = () => (
 {/* Holy Cow, you gotta wrap the total price in the format monies func such that its not in cents 👍 */}
     <p>{formatMoney(calcTotalPrice(me.cart))}</p>
   </footer>
-                <SickButton>Checkout</SickButton>
+                <TakeMyMoney>
+                  <SickButton>Checkout</SickButton>
+                </TakeMyMoney> 
               </CartStyles>
             )}
           </Query>

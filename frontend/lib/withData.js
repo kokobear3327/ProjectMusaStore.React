@@ -38,7 +38,7 @@ function createClient({ headers }) {
       },
       defaults: {
         // Boolean you gonna be flippin
-        cartOpen: true
+        cartOpen: false
       }
     }
   });
