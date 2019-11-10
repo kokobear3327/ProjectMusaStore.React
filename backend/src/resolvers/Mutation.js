@@ -18,6 +18,20 @@ const Mutations = {
 
     return item;
   },
+  async createOrder(parent, args, ctx, info) {
+    // 1.  Query the current user and assure they're signed in.  Go into the nested cart and dig out details 👍
+    const { userId } = ctx.request;
+    if (!userId) throw new Error('You are not signed in')
+    const user = await ctx.db.query.user({ where: { id: userId } },`
+    { id name email cart { id quantity item { title price id description image} }}`);
+    // 2.  Recalculate the total for the price where they can't interfere with it on the client side (js)
+    const amount = user.cart.reduce((tally, cartItem) => tally + cartItem.item.price * cartItem.quantity, 0);
+    console.log(`Charge total is ${amount}`);
+    // 3.  Create the Stripe charge
+    // 4.  Convert the Cartitems to Orderitems
+    // 5.  Create the Order
+    // 6.  Clear up the cart, clear the cache and delete the cart items, return order to client
+  },
   updateItem(parent, args, ctx, info) {
     // first take a copy of the updates
     const updates = { ...args };

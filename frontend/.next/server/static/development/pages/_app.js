@@ -494,7 +494,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "prop-types");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/Users/Programming_Work_2/Desktop/cartcounting/final1109/frontend/components/ErrorMessage.js";
+var _jsxFileName = "/Users/Programming_Work_2/Desktop/payments/payments/frontend/components/ErrorMessage.js";
 
 
 
@@ -1284,7 +1284,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_apollo__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-apollo */ "react-apollo");
 /* harmony import */ var react_apollo__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react_apollo__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var _User__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./User */ "./components/User.js");
-var _jsxFileName = "/Users/Programming_Work_2/Desktop/cartcounting/final1109/frontend/components/TakeMyMoney.js";
+var _jsxFileName = "/Users/Programming_Work_2/Desktop/payments/payments/frontend/components/TakeMyMoney.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -1306,6 +1306,18 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+function _templateObject() {
+  var data = _taggedTemplateLiteral([" \nmutation createOrder($token: String!) {\n  createOrder(token: $token) {\n    id\n    charge\n    totalItems\n    items {\n      id\n      title\n    }\n  }\n}\n\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
 
 
 
@@ -1321,12 +1333,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 // Likewise, we get an awful error it item doesn't exist, so you check with me.cart[0].item && 👍
 // So the way it works:
 //   You create a token with the CC info that is sent to Stripe who then send your token to the server
+// Generating the token is crucial to the process.  Once you get the token, you then pass that MO to the server 👍
+// Passing the createOrder function as a secondary argument to token is a 🔑 step in this whole process.  Scoping
 
 function totalItems(cart) {
   return cart.reduce(function (tally, cartItem) {
     return tally + cartItem.quantity;
   }, 0);
 }
+
+var CREATE_ORDER_MUTATION = graphql_tag__WEBPACK_IMPORTED_MODULE_4___default()(_templateObject());
 
 var TakeMyMoney =
 /*#__PURE__*/
@@ -1346,10 +1362,18 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(TakeMyMoney)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onToken", function (res) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onToken", function (res, createOrder) {
       console.log('On Token Called!');
       console.log('this is the res:');
-      console.log(res);
+      console.log(res); // manually call the mutation once we have the stripe token.  
+
+      createOrder({
+        variables: {
+          token: res.id
+        }
+      }).catch(function (err) {
+        alert(err.message);
+      });
     });
 
     return _this;
@@ -1363,29 +1387,41 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_User__WEBPACK_IMPORTED_MODULE_9__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 33
+          lineNumber: 59
         },
         __self: this
       }, function (_ref) {
         var me = _ref.data.me;
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_stripe_checkout__WEBPACK_IMPORTED_MODULE_7___default.a, {
-          amount: Object(_lib_calcTotalPrice__WEBPACK_IMPORTED_MODULE_5__["default"])(me.cart),
-          name: "Project Musa",
-          description: "".concat(totalItems(me.cart), " products ordered!") // Be careful, this produces an awful bug:
-          ,
-          image: me.cart[0].item && me.cart[0].item.image,
-          stripeKey: "pk_live_grzfRYXcSWt70FeeiFIKFucz00tkYgt2an",
-          currency: "USD",
-          email: me.email,
-          token: function token(res) {
-            return _this2.onToken(res);
-          },
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_apollo__WEBPACK_IMPORTED_MODULE_8__["Mutation"], {
+          mutation: CREATE_ORDER_MUTATION,
+          refetchQueries: [{
+            query: _User__WEBPACK_IMPORTED_MODULE_9__["CURRENT_USER_QUERY"]
+          }],
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 33
+            lineNumber: 61
           },
           __self: this
-        }, _this2.props.children);
+        }, function (createOrder) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_stripe_checkout__WEBPACK_IMPORTED_MODULE_7___default.a, {
+            name: "Project Musa",
+            amount: Object(_lib_calcTotalPrice__WEBPACK_IMPORTED_MODULE_5__["default"])(me.cart[0].item && me.cart),
+            description: "".concat(totalItems(me.cart), " products ordered!") // Be careful, this produces an awful bug if you dont do the preceding && logic :
+            ,
+            image: me.cart[0].item && me.cart[0].item.image,
+            stripeKey: "pk_test_2vx7bJ9C6SY3O8LUWtaydvWx00ZoPPIAgd",
+            currency: "USD",
+            email: me.email,
+            token: function token(res) {
+              return _this2.onToken(res, createOrder);
+            },
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 65
+            },
+            __self: this
+          }, _this2.props.children);
+        });
       });
     }
   }]);
