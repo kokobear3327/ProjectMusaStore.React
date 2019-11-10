@@ -25,7 +25,11 @@ const Mutations = {
     const user = await ctx.db.query.user({ where: { id: userId } },`
     { id name email cart { id quantity item { title price id description image} }}`);
     // 2.  Recalculate the total for the price where they can't interfere with it on the client side (js)
-    const amount = user.cart.reduce((tally, cartItem) => tally + cartItem.item.price * cartItem.quantity, 0);
+    const amount = user.cart.reduce(
+      (tally, cartItem) => tally + cartItem.item.price * 
+      cartItem.quantity, 
+      0
+    );
     console.log(`Charge total is ${amount}`);
     // 3.  Create the Stripe charge
     // 4.  Convert the Cartitems to Orderitems

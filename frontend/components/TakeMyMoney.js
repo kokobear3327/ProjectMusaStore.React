@@ -21,6 +21,7 @@ import User, { CURRENT_USER_QUERY } from './User';
 // Generating the token is crucial to the process.  Once you get the token, you then pass that MO to the server 👍
 
 // Passing the createOrder function as a secondary argument to token is a 🔑 step in this whole process.  Scoping
+
 function totalItems(cart) {
   return cart.reduce((tally, cartItem) => tally + cartItem.quantity, 0);
 }
@@ -30,7 +31,7 @@ mutation createOrder($token: String!) {
   createOrder(token: $token) {
     id
     charge
-    totalItems
+    total
     items {
       id
       title
@@ -61,10 +62,11 @@ class TakeMyMoney extends React.Component {
     <Mutation mutation={CREATE_ORDER_MUTATION}
     refetchQueries={[{ query: CURRENT_USER_QUERY}
     ]}>
-    {(createOrder) => (
+    {createOrder => (
     <StripeCheckout
       name="Project Musa"
       amount={calcTotalPrice(me.cart[0].item && me.cart)}
+      // Here is where the error is coming from, cannot query totalItems...
       description={`${totalItems(me.cart)} products ordered!`}
       // Be careful, this produces an awful bug if you dont do the preceding && logic :
       image={me.cart[0].item && me.cart[0].item.image}

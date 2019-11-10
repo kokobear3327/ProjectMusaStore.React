@@ -1284,7 +1284,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_apollo__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-apollo */ "react-apollo");
 /* harmony import */ var react_apollo__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react_apollo__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var _User__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./User */ "./components/User.js");
-var _jsxFileName = "/Users/Programming_Work_2/Desktop/payments/payments/frontend/components/TakeMyMoney.js";
+var _jsxFileName = "/Users/Programming_Work_2/Desktop/serverpayments/serverpayments/frontend/components/TakeMyMoney.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -1307,7 +1307,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral([" \nmutation createOrder($token: String!) {\n  createOrder(token: $token) {\n    id\n    charge\n    totalItems\n    items {\n      id\n      title\n    }\n  }\n}\n\n"]);
+  var data = _taggedTemplateLiteral([" \nmutation createOrder($token: String!) {\n  createOrder(token: $token) {\n    id\n    charge\n    total\n    items {\n      id\n      title\n    }\n  }\n}\n\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -1387,7 +1387,7 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_User__WEBPACK_IMPORTED_MODULE_9__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 59
+          lineNumber: 60
         },
         __self: this
       }, function (_ref) {
@@ -1399,13 +1399,14 @@ function (_React$Component) {
           }],
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 61
+            lineNumber: 62
           },
           __self: this
         }, function (createOrder) {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_stripe_checkout__WEBPACK_IMPORTED_MODULE_7___default.a, {
             name: "Project Musa",
-            amount: Object(_lib_calcTotalPrice__WEBPACK_IMPORTED_MODULE_5__["default"])(me.cart[0].item && me.cart),
+            amount: Object(_lib_calcTotalPrice__WEBPACK_IMPORTED_MODULE_5__["default"])(me.cart[0].item && me.cart) // Here is where the error is coming from, cannot query totalItems...
+            ,
             description: "".concat(totalItems(me.cart), " products ordered!") // Be careful, this produces an awful bug if you dont do the preceding && logic :
             ,
             image: me.cart[0].item && me.cart[0].item.image,
@@ -1417,7 +1418,7 @@ function (_React$Component) {
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 65
+              lineNumber: 66
             },
             __self: this
           }, _this2.props.children);
