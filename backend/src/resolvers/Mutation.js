@@ -33,7 +33,7 @@ const Mutations = {
         cart { 
           id 
           quantity 
-          item { title price id description image} 
+          item { title price id description image largeImage} 
         }}`
       );
     // 2.  Recalculate the total for the price where they can't interfere with it on the client side (js)
@@ -46,13 +46,45 @@ const Mutations = {
     console.log(`Charge total is ${amount}`);
     // 3.  Create that Stripe charge by permutating token
     const charge = await stripe.charges.create({
+      // You can add a description, an order id, etc here as well
       amount,
       currency: 'USD',
       source: args.token,
     });
     // 4.  Convert the Cartitems to Orderitems
+    const orderItems = user.cart.map(cartItem => {
+      // Look at the datamodel.graphql here to see what it absolutely!! needs 👍
+      //  so id! title! description! image! largeImage! price! etc
+      const orderItem = {
+        // so the spread copies every field, but we still need quantity and user properties.
+        //   Likewise, when you use the spread operator it doesn't use reference, but rather it copys... 🤔
+        //     You do wanna delete the id of the cart item that being said...Don't want it copied
+        //       You also get this hard to debug error if you don't make it cartItem.item, that is the item of the cartITem
+        ...cartItem.item,
+        quantity: cartItem.quantity,
+        user: { connect: { id: userId } },
+      };
+      delete orderItem.id;
+      return orderItem;
+    });
     // 5.  Create the Order
-    // 6.  Clear up the cart, clear the cache and delete the cart items, return order to client
+    const order = await ctx.db.mutation.createOrder({
+      data: {
+        // charge.amount is coming from Stripe 👍
+        total: charge.amount,
+        charge: charge.id,
+        // this is an awesome feature of pr
+        user: { connect: { id: userId } },
+      },
+    });
+    // 6.  Clear cart/cache and delete the cart items, return order to client
+    const cartItemIds = user.cart.map(cartItem => cartItem.id);
+    // fuck me running 😆 isn't prisma great?  Delete em only if the array is in the cart item ids
+    await ctx.db.mutation.deleteManyCartItems({ where: {
+      id_in: cartItemIds,
+    },
+  });
+  return order;
   },
   updateItem(parent, args, ctx, info) {
     // first take a copy of the updates

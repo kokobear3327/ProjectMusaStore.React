@@ -71,9 +71,11 @@ const Cart = () => (
 {/* Holy Cow, you gotta wrap the total price in the format monies func such that its not in cents 👍 */}
     <p>{formatMoney(calcTotalPrice(me.cart))}</p>
   </footer>
+      {me.cart.length && (
                 <TakeMyMoney>
                   <SickButton>Checkout</SickButton>
                 </TakeMyMoney> 
+                )}
               </CartStyles>
             )}
           </Query>
