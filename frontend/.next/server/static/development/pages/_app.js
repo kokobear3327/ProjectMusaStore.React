@@ -693,7 +693,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/head */ "next/head");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Users/websites/Desktop/final1107/final1107/frontend/components/Meta.js";
+var _jsxFileName = "/Users/Programming_Work_2/Desktop/token2/token/frontend/components/Meta.js";
 
 
 
@@ -769,7 +769,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _User__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./User */ "./components/User.js");
 /* harmony import */ var _Signout__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Signout */ "./components/Signout.js");
 /* harmony import */ var _Cart__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Cart */ "./components/Cart.js");
-var _jsxFileName = "/Users/Programming_Work_2/Desktop/SCartPics/final1109/frontend/components/Nav.js";
+var _jsxFileName = "/Users/Programming_Work_2/Desktop/token2/token/frontend/components/Nav.js";
 
 
 
@@ -808,7 +808,7 @@ var Nav = function Nav() {
       },
       __self: this
     }, "Shop")), me && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-      href: "/sell",
+      href: "/admin",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 20
@@ -1288,7 +1288,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_apollo__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(react_apollo__WEBPACK_IMPORTED_MODULE_9__);
 /* harmony import */ var _User__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./User */ "./components/User.js");
 
-var _jsxFileName = "/Users/Programming_Work_2/Desktop/serverpayments/serverpayments/frontend/components/TakeMyMoney.js";
+var _jsxFileName = "/Users/Programming_Work_2/Desktop/token2/token/frontend/components/TakeMyMoney.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -1386,8 +1386,14 @@ function (_React$Component) {
 
               case 3:
                 order = _context.sent;
+                next_router__WEBPACK_IMPORTED_MODULE_2___default.a.push({
+                  pathname: '/order',
+                  query: {
+                    id: order.data.createOrder.id
+                  }
+                });
 
-              case 4:
+              case 5:
               case "end":
                 return _context.stop();
             }

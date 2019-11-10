@@ -17,7 +17,7 @@ const Nav = () => (
         </Link>
         {me && (
           <>
-            <Link href="/sell">
+            <Link href="/admin">
               <a>Admin</a>
             </Link>
             <Link href="/orders">
