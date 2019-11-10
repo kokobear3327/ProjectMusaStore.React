@@ -1,5 +1,7 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+// stripe has all the methods in it you need 🙅‍
+const stripe = require('../stripe');
 
 const Mutations = {
   async createItem(parent, args, ctx, info) {
@@ -21,17 +23,33 @@ const Mutations = {
   async createOrder(parent, args, ctx, info) {
     // 1.  Query the current user and assure they're signed in.  Go into the nested cart and dig out details 👍
     const { userId } = ctx.request;
-    if (!userId) throw new Error('You are not signed in')
-    const user = await ctx.db.query.user({ where: { id: userId } },`
-    { id name email cart { id quantity item { title price id description image} }}`);
+    if (!userId) throw new Error('You are not signed in');
+    const user = await ctx.db.query.user(
+      { where: { id: userId } },
+      `{ 
+        id 
+        name 
+        email 
+        cart { 
+          id 
+          quantity 
+          item { title price id description image} 
+        }}`
+      );
     // 2.  Recalculate the total for the price where they can't interfere with it on the client side (js)
     const amount = user.cart.reduce(
       (tally, cartItem) => tally + cartItem.item.price * 
       cartItem.quantity, 
       0
     );
+    console.log("here is the amount total:")
     console.log(`Charge total is ${amount}`);
-    // 3.  Create the Stripe charge
+    // 3.  Create that Stripe charge by permutating token
+    const charge = await stripe.charges.create({
+      amount,
+      currency: 'USD',
+      source: args.token,
+    });
     // 4.  Convert the Cartitems to Orderitems
     // 5.  Create the Order
     // 6.  Clear up the cart, clear the cache and delete the cart items, return order to client
