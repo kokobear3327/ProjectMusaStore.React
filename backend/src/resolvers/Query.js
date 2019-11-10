@@ -24,6 +24,19 @@ const Query = {
         info
         );
     },
+    async order(parent, args, ctx, info) {
+        // 1.  Validate login details 
+        if(!ctx.request.userId) {
+            throw new Error('You arent logged in!');
+        }
+        // 2.  Query their order then return the order.  Info part is so you can query it later 👍
+        const order = await ctx.db.query.order({
+            where: { id: args.id  },
+        }, info);
+
+        return order;
+        
+    }
 };
 
 module.exports = Query;

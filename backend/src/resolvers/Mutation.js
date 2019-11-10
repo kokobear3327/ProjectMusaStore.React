@@ -33,7 +33,12 @@ const Mutations = {
         cart { 
           id 
           quantity 
-          item { title price id description image largeImage} 
+          item { title 
+                 price 
+                 id 
+                description 
+                image 
+                largeImage} 
         }}`
       );
     // 2.  Recalculate the total for the price where they can't interfere with it on the client side (js)

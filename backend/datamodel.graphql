@@ -15,6 +15,9 @@ type Order {
   total: Int!
   user: User!
   charge: String!
+  """ This is how nightmare bug #3 was solved: """
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
 }
 
 type CartItem {
