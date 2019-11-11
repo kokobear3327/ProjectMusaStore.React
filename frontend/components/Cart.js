@@ -10,7 +10,7 @@ import Supreme from './styles/Supreme';
 import formatMoney from '../lib/formatMoney';
 import calcTotalPrice from '../lib/calcTotalPrice';
 import CloseButton from './styles/CloseButton';
-import SickButton from './styles/SickButton';
+import ProjectmusaButton from './styles/ProjectmusaButton';
 import CartStyles from './styles/CartStyles';
 
 
@@ -73,7 +73,7 @@ const Cart = () => (
   </footer>
       {me.cart.length && (
                 <TakeMyMoney>
-                  <SickButton>Checkout</SickButton>
+                  <ProjectmusaButton>Checkout</ProjectmusaButton>
                 </TakeMyMoney> 
                 )}
               </CartStyles>

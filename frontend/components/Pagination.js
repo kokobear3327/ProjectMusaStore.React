@@ -26,7 +26,7 @@ const Pagination = props => (
                 if (error) return <p>shit is fucked 💩Aka Error</p>
                 if (loading) return <p>Its Loading 🤸‍♂️</p>
                 const count = data.itemsConnection.aggregate.count;
-                const pages = Math.ceil(count / perPage);
+                const container = Math.ceil(count / perPage);
                 const page = props.page;
                 // page - 1 cuz you want the previous page 👍
                 // prefetch is going to prerender the previous and forward looking page for faster
@@ -34,7 +34,7 @@ const Pagination = props => (
                 return (
                     <PaginationStyles>
                         <Head> 
-                            <title>Project Musa! {page} of {pages}</title>
+                            <title>Project Musa! {page} of {container}</title>
                         </Head>
                         <Link prefetch href={{
                             pathname: 'items',
@@ -42,13 +42,13 @@ const Pagination = props => (
                         }}>
                             <a className="prev" aria-disabled={page <= 1}>  ◀️   </a>
                         </Link>
-                        <p>{props.page} of {pages}</p>
+                        <p>{props.page} of {container}</p>
                         <p>{count} Pictures Total </p>
                         <Link prefetch href={{
                             pathname: 'items',
                             query: { page: page + 1 }
                         }}>
-                            <a className="prev" aria-disabled={page >= pages}>  ▶️  </a>
+                            <a className="prev" aria-disabled={page >= container}>  ▶️  </a>
                         </Link>
                     </PaginationStyles>
                 )}}

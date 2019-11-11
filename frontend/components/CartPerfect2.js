@@ -4,7 +4,7 @@ import gql from 'graphql-tag';
 import CartStyles from './styles/CartStyles';
 import Supreme from './styles/Supreme';
 import CloseButton from './styles/CloseButton';
-import SickButton from './styles/SickButton';
+import ProjectmusaButton from './styles/ProjectmusaButton';
 
 const LOCAL_STATE_QUERY = gql`
   query {
@@ -34,7 +34,7 @@ const Cart = () => (
 
             <footer>
               <p>$10.10</p>
-              <SickButton>Checkout</SickButton>
+              <ProjectmusaButton>Checkout</ProjectmusaButton>
             </footer>
           </CartStyles>
         )}
