@@ -13,24 +13,22 @@ const Nav = () => (
     {({ data: { me } }) => (
       <NavStyles>
         <Link href="/items">
-          <a>Shop</a>
+          <a>Store</a>
         </Link>
         {me && (
           <>
+            <Link href="/history">
+              <a>History</a>
+            </Link>
             <Link href="/admin">
               <a>Admin</a>
             </Link>
-            <Link href="/orders">
-              <a>Orders</a>
-            </Link>
-            <Link href="/me">
-              <a>Account</a>
-            </Link>
+
             <Signout />
             <Mutation mutation={TOGGLE_CART_MUTATION}>
               {(toggleCart) => (
                 <button onClick={toggleCart} >
-                  My Cart🛒
+                  My Cart 🛒
                   <CartCount count={me.cart.reduce((tally, cartItem) => tally + cartItem.quantity, 0)}></CartCount>
                   </button>
             )}

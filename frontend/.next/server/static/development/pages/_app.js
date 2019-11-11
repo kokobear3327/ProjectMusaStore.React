@@ -769,7 +769,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _User__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./User */ "./components/User.js");
 /* harmony import */ var _Signout__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Signout */ "./components/Signout.js");
 /* harmony import */ var _Cart__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Cart */ "./components/Cart.js");
-var _jsxFileName = "/Users/Programming_Work_2/Desktop/token2/token/frontend/components/Nav.js";
+var _jsxFileName = "/Users/Programming_Work_2/Desktop/donewithbug/donewithbug/frontend/components/Nav.js";
 
 
 
@@ -807,8 +807,8 @@ var Nav = function Nav() {
         lineNumber: 16
       },
       __self: this
-    }, "Shop")), me && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-      href: "/admin",
+    }, "Store")), me && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+      href: "/history",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 20
@@ -820,8 +820,8 @@ var Nav = function Nav() {
         lineNumber: 21
       },
       __self: this
-    }, "Admin")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-      href: "/orders",
+    }, "History")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+      href: "/admin",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 23
@@ -833,30 +833,17 @@ var Nav = function Nav() {
         lineNumber: 24
       },
       __self: this
-    }, "Orders")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-      href: "/me",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 26
-      },
-      __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    }, "Admin")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Signout__WEBPACK_IMPORTED_MODULE_6__["default"], {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 27
-      },
-      __self: this
-    }, "Account")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Signout__WEBPACK_IMPORTED_MODULE_6__["default"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 29
       },
       __self: this
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_apollo__WEBPACK_IMPORTED_MODULE_4__["Mutation"], {
       mutation: _Cart__WEBPACK_IMPORTED_MODULE_7__["TOGGLE_CART_MUTATION"],
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 30
+        lineNumber: 28
       },
       __self: this
     }, function (toggleCart) {
@@ -864,16 +851,16 @@ var Nav = function Nav() {
         onClick: toggleCart,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 32
+          lineNumber: 30
         },
         __self: this
-      }, "My Cart\uD83D\uDED2", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_CartCount__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      }, "My Cart \uD83D\uDED2", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_CartCount__WEBPACK_IMPORTED_MODULE_2__["default"], {
         count: me.cart.reduce(function (tally, cartItem) {
           return tally + cartItem.quantity;
         }, 0),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 34
+          lineNumber: 32
         },
         __self: this
       }));
@@ -881,13 +868,13 @@ var Nav = function Nav() {
       href: "/signup",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 41
+        lineNumber: 39
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 42
+        lineNumber: 40
       },
       __self: this
     }, "Sign In")));
