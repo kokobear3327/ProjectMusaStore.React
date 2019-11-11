@@ -64,7 +64,7 @@ const Cart = () => (
       </CloseButton>
       <Supreme>{me.name}'s Cart</Supreme>
       
-      <p>You got {me.cart.length} Item{me.cart.length === 1 ? '' : 's'} in your cart</p>
+      <p>You have {me.cart.length} Item{me.cart.length === 1 ? '' : 's'} in your cart</p>
     </header>
     <ul>{me.cart.map(cartItem => <CartItem cartItem={cartItem} key={cartItem.id} />)}</ul>
   <footer>

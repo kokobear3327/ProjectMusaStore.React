@@ -27,7 +27,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_CloseButton__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./styles/CloseButton */ "./components/styles/CloseButton.js");
 /* harmony import */ var _styles_SickButton__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./styles/SickButton */ "./components/styles/SickButton.js");
 /* harmony import */ var _styles_CartStyles__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./styles/CartStyles */ "./components/styles/CartStyles.js");
-var _jsxFileName = "/Users/Programming_Work_2/Desktop/serverpayments/serverpayments/frontend/components/Cart.js";
+var _jsxFileName = "/Users/Programming_Work_2/Desktop/mods1/mods1/frontend/components/Cart.js";
 
 function _templateObject2() {
   var data = _taggedTemplateLiteral(["\n  query {\n    cartOpen @client\n  }\n"]);
@@ -138,7 +138,7 @@ var Cart = function Cart() {
             lineNumber: 67
           },
           __self: this
-        }, "You got ", me.cart.length, " Item", me.cart.length === 1 ? '' : 's', " in your cart")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        }, "You have ", me.cart.length, " Item", me.cart.length === 1 ? '' : 's', " in your cart")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
           __source: {
             fileName: _jsxFileName,
             lineNumber: 69
@@ -1429,7 +1429,7 @@ __webpack_require__.r(__webpack_exports__);
 var CartStyles = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.withConfig({
   displayName: "CartStyles",
   componentId: "sc-1hysgde-0"
-})(["padding:20px;position:relative;background:white;position:fixed;height:100%;top:0;right:0;width:40%;min-width:500px;bottom:0;transform:translateX(100%);transition:all 0.3s;box-shadow:0 0 10px 3px rgba(0,0,0,0.2);z-index:5;display:grid;grid-template-rows:auto 1fr auto;", ";header{border-bottom:5px solid ", ";margin-bottom:2rem;padding-bottom:2rem;}footer{border-top:10px double ", ";margin-top:2rem;padding-top:2rem;display:grid;grid-template-columns:auto auto;align-items:center;font-size:3rem;font-weight:900;p{margin:0;}}ul{margin:0;padding:0;list-style:none;overflow:scroll;}"], function (props) {
+})(["height:83.9%;bottom:0;right:0;width:41.2%;min-width:550px;padding:20px;position:relative;background:white;position:fixed;transform:translateX(100%);transition:all 1.5s;box-shadow:0 0 19px 3px rgba(1,10,0,0.8);z-index:5;display:grid;grid-template-rows:auto;", ";header{border-bottom:12px solid ", ";margin-bottom:12px;padding-bottom:2rem;}footer{border-top:10px double ", ";margin-top:2rem;padding-top:2rem;display:grid;grid-template-columns:auto auto;align-items:center;font-size:3rem;font-weight:900;font-family:'Aisha Script' p{margin:0;}}ul{list-style:none;overflow:scroll;margin:0;padding:0;}"], function (props) {
   return props.open && "transform: translateX(0);";
 }, function (props) {
   return props.theme.black;
