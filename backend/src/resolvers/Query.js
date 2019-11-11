@@ -35,7 +35,17 @@ const Query = {
         }, info);
 
         return order;
-        
+    },
+    async orders(parent, args, ctx, info) {
+        const { userId } = ctx.request;
+        if(!userId) {
+            throw new Error("You are probably not logged in!  No User ID found 🙁")
+        }
+        return ctx.db.query.orders({
+            where: {
+                user: { id: userId }
+            }
+        }, info)
     }
 };
 
