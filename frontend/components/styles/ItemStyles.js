@@ -1,12 +1,11 @@
 import styled from 'styled-components';
 
 const Item = styled.div`
+  border: 1px solid ${props => props.theme.black};
+  box-shadow: 0 0 76px 12px rgba(1, 10, 0, 0.9);
   display: flex;
   background: white;
   flex-direction: column;
-  border: 1px solid ${props => props.theme.black};
-  box-shadow: 0 0 56px 12px rgba(1, 10, 0, 0.9);
-  // corner-radius: 12px;
   position: relative;
   img {
     width: 100%;

@@ -115,13 +115,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_adopt__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_adopt__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _User__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./User */ "./components/User.js");
 /* harmony import */ var _TakeMyMoney__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./TakeMyMoney */ "./components/TakeMyMoney.js");
-/* harmony import */ var _styles_Superhumanh3__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./styles/Superhumanh3 */ "./components/styles/Superhumanh3.js");
+/* harmony import */ var _styles_Superhumanh3__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./styles/Superhumanh3 */ "./components/styles/Superhumanh3.js");
 /* harmony import */ var _lib_formatMoney__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../lib/formatMoney */ "./lib/formatMoney.js");
 /* harmony import */ var _lib_calcTotalPrice__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../lib/calcTotalPrice */ "./lib/calcTotalPrice.js");
 /* harmony import */ var _styles_CloseButton__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./styles/CloseButton */ "./components/styles/CloseButton.js");
 /* harmony import */ var _styles_ProjectmusaButton__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./styles/ProjectmusaButton */ "./components/styles/ProjectmusaButton.js");
 /* harmony import */ var _styles_CartStyles__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./styles/CartStyles */ "./components/styles/CartStyles.js");
-var _jsxFileName = "/Users/websites/Desktop/mod3/mod3Old/mod3/frontend/components/Cart.js";
+var _jsxFileName = "/Users/Programming_Work_2/Desktop/mod3Newest/mod3/frontend/components/Cart.js";
 
 function _templateObject2() {
   var data = _taggedTemplateLiteral(["\n  query {\n    cartOpen @client\n  }\n"]);
@@ -220,7 +220,7 @@ var Cart = function Cart() {
             lineNumber: 59
           },
           __self: this
-        }, "\xD7"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_Superhumanh3__WEBPACK_IMPORTED_MODULE_13__["default"], {
+        }, "\xD7"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_Superhumanh3__WEBPACK_IMPORTED_MODULE_7__["default"], {
           __source: {
             fileName: _jsxFileName,
             lineNumber: 65
