@@ -4,7 +4,7 @@ import gql from 'graphql-tag';
 import { adopt } from 'react-adopt';
 import User from './User';
 import CartStyles from './styles/CartStyles';
-import Supreme from './styles/Supreme';
+import Superhumanh3 from './styles/Superhumanh3';
 import CloseButton from './styles/CloseButton';
 import ProjectmusaButton from './styles/ProjectmusaButton';
 import CartItem from './CartItem';
@@ -42,7 +42,7 @@ const Cart = () => (
             <CloseButton onClick={toggleCart} title="close">
               &times;
             </CloseButton>
-            <Supreme>{me.name}'s Cart</Supreme>
+            <Superhumanh3>{me.name}'s Cart</Superhumanh3>
             <p>
               You Have {me.cart.length} Item{me.cart.length === 1 ? '' : 's'} in your cart.
             </p>

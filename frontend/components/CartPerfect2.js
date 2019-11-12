@@ -2,7 +2,7 @@ import React from 'react';
 import { Query, Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
 import CartStyles from './styles/CartStyles';
-import Supreme from './styles/Supreme';
+import Superhumanh3 from './styles/Superhumanh3';
 import CloseButton from './styles/CloseButton';
 import ProjectmusaButton from './styles/ProjectmusaButton';
 
@@ -28,7 +28,7 @@ const Cart = () => (
               <CloseButton onClick={toggleCart} title="close">
                 &times;
               </CloseButton>
-              <Supreme>Your Cart</Supreme>
+              <Superhumanh3>Your Cart</Superhumanh3>
               <p>You Have __ Items in your cart.</p>
             </header>
 

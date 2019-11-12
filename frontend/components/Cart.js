@@ -6,7 +6,7 @@ import { adopt } from 'react-adopt';
 import User from './User';
 import TakeMyMoney from './TakeMyMoney';
 // Styled-Components:
-import Supreme from './styles/Supreme';
+import Superhumanh3 from './styles/Superhumanh3';
 import formatMoney from '../lib/formatMoney';
 import calcTotalPrice from '../lib/calcTotalPrice';
 import CloseButton from './styles/CloseButton';
@@ -62,7 +62,7 @@ const Cart = () => (
       >
         &times;
       </CloseButton>
-      <Supreme>{me.name}'s Cart</Supreme>
+      <Superhumanh3>{me.name}'s Cart</Superhumanh3>
       
       <p>You have {me.cart.length} Item{me.cart.length === 1 ? '' : 's'} in your cart</p>
     </header>
