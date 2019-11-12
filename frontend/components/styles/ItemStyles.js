@@ -4,7 +4,7 @@ const Item = styled.div`
   border: 1px solid ${props => props.theme.black};
   box-shadow: 0 0 76px 24px rgba(1, 10, 0, 0.9);
   display: flex;
-  background: white;
+  background: rgba(1, 1, 0, 0.2101);
   flex-direction: column;
   position: relative;
   img {
@@ -16,9 +16,10 @@ const Item = styled.div`
     padding: 0 3rem;
     font-size: 1.5rem;
     font-size: 17px;
-    line-height: 2;
+    line-height: 1.4;
     font-weight: 300;
     flex-grow: 1;
+    /* padding: 0 3rem; */
   }
   .buttonList {
     display: grid;

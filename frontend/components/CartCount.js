@@ -38,14 +38,13 @@ const AnimationStyles = styled.span`
 //   font-feature-settings: 'tnum';   
 //   font-variant-numeric: tabular-nums;
 const Dot = styled.div`
-  background: ${props => props.theme.blue};
-  color: white;
+  color: black;
   border-radius: 50%;
   padding: 0.5rem;
   line-height: 2rem;
   min-width: 3rem;
-  margin-left: 1rem;
-  font-weight: 100;
+  margin-left: -12px;
+  font-weight: 300;
   font-feature-settings: 'tnum';
   font-variant-numeric: tabular-nums;
 `;

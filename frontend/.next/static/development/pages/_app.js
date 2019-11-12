@@ -205,7 +205,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_transition_group__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-transition-group */ "./node_modules/react-transition-group/index.js");
 /* harmony import */ var react_transition_group__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_transition_group__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-var _jsxFileName = "/Users/websites/Desktop/mod3/mod3Old/mod3/frontend/components/CartCount.js";
+var _jsxFileName = "/Users/Programming_Work_2/Desktop/mod3Newest/mod3/frontend/components/CartCount.js";
 
 
 
@@ -226,22 +226,20 @@ var AnimationStyles = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].
 var Dot = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div.withConfig({
   displayName: "CartCount__Dot",
   componentId: "vhex7l-1"
-})(["background:", ";color:white;border-radius:50%;padding:0.5rem;line-height:2rem;min-width:3rem;margin-left:1rem;font-weight:100;font-feature-settings:'tnum';font-variant-numeric:tabular-nums;"], function (props) {
-  return props.theme.blue;
-});
+})(["color:black;border-radius:50%;padding:0.5rem;line-height:2rem;min-width:3rem;margin-left:-12px;font-weight:300;font-feature-settings:'tnum';font-variant-numeric:tabular-nums;"]);
 
 var CartCount = function CartCount(_ref) {
   var count = _ref.count;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(AnimationStyles, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 53
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_transition_group__WEBPACK_IMPORTED_MODULE_2__["TransitionGroup"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55
+      lineNumber: 54
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_transition_group__WEBPACK_IMPORTED_MODULE_2__["CSSTransition"], {
@@ -255,13 +253,13 @@ var CartCount = function CartCount(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56
+      lineNumber: 55
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Dot, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63
+      lineNumber: 62
     },
     __self: this
   }, count))));
