@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const Item = styled.div`
   border: 1px solid ${props => props.theme.black};
-  box-shadow: 0 0 76px 12px rgba(1, 10, 0, 0.9);
+  box-shadow: 0 0 76px 24px rgba(1, 10, 0, 0.9);
   display: flex;
   background: white;
   flex-direction: column;
@@ -15,7 +15,7 @@ const Item = styled.div`
   p {
     padding: 0 3rem;
     font-size: 1.5rem;
-    font-size: 12px;
+    font-size: 17px;
     line-height: 2;
     font-weight: 300;
     flex-grow: 1;

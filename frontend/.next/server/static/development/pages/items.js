@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -749,7 +749,7 @@ __webpack_require__.r(__webpack_exports__);
 var Item = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.div.withConfig({
   displayName: "ItemStyles__Item",
   componentId: "sc-14nvkdp-0"
-})(["border:1px solid ", ";box-shadow:0 0 76px 12px rgba(1,10,0,0.9);display:flex;background:white;flex-direction:column;position:relative;img{width:100%;height:400px;object-fit:cover;}p{padding:0 3rem;font-size:1.5rem;font-size:12px;line-height:2;font-weight:300;flex-grow:1;}.buttonList{display:grid;width:100%;border-top:1px solid ", ";grid-template-columns:repeat(auto-fit,minmax(100px,1fr));grid-gap:1px;background:", ";& > *{background:white;border:0;font-size:1rem;padding:1rem;}}"], function (props) {
+})(["border:1px solid ", ";box-shadow:0 0 76px 24px rgba(1,10,0,0.9);display:flex;background:white;flex-direction:column;position:relative;img{width:100%;height:400px;object-fit:cover;}p{padding:0 3rem;font-size:1.5rem;font-size:17px;line-height:2;font-weight:300;flex-grow:1;}.buttonList{display:grid;width:100%;border-top:1px solid ", ";grid-template-columns:repeat(auto-fit,minmax(100px,1fr));grid-gap:1px;background:", ";& > *{background:white;border:0;font-size:1rem;padding:1rem;}}"], function (props) {
   return props.theme.black;
 }, function (props) {
   return props.theme.lightgrey;
@@ -799,7 +799,7 @@ __webpack_require__.r(__webpack_exports__);
 var PriceTag = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.span.withConfig({
   displayName: "PriceTag",
   componentId: "sc-1u9nbeu-0"
-})(["transform:rotate(3deg);color:white;font-weight:600;padding:5px;line-height:1;font-size:3rem;display:inline-block;position:absolute;top:34px;right:34px;"]);
+})(["color:white;font-weight:600;padding:5px;line-height:1;font-size:3rem;display:inline-block;position:absolute;top:34px;right:34px;"]);
 /* harmony default export */ __webpack_exports__["default"] = (PriceTag);
 
 /***/ }),
@@ -919,7 +919,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 4:
+/***/ 5:
 /*!******************************!*\
   !*** multi ./pages/items.js ***!
   \******************************/
