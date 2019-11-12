@@ -4,7 +4,7 @@
   "description": "Project Musa Online store using GraphQL, Next.js, Apollo, and Prisma",
   "main": "index.js",
   "scripts": {
-    "dev": "next -p 7777",
+    "dev": "next -p 1777",
     "build": "next build",
     "start": "next start",
     "test": "NODE_ENV=test jest --watch",

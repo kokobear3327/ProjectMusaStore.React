@@ -8,7 +8,7 @@ import { perPage } from '../config';
 
 // This is how you do it via Apollo.  The child of a query(or mutation) component must be a function!
 
-// run npm run dev on the backend, then it should properly communicate with the localhost:4444
+// run npm run dev on the backend, then it should properly communicate with the localhost:1776
 
 // You could also call ${props => props.theme.maxWidth} for max-width
 const ItemsList = styled.div`

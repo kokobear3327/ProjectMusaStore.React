@@ -318,7 +318,7 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
  // This is how you do it via Apollo.  The child of a query(or mutation) component must be a function!
-// run npm run dev on the backend, then it should properly communicate with the localhost:4444
+// run npm run dev on the backend, then it should properly communicate with the localhost:1776
 // You could also call ${props => props.theme.maxWidth} for max-width
 
 var ItemsList = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div.withConfig({
@@ -743,7 +743,7 @@ var Title = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h3.withCon
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "endpoint", function() { return endpoint; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "perPage", function() { return perPage; });
-var endpoint = "http://localhost:4444";
+var endpoint = "http://localhost:1776";
 var perPage = 4;
 
 /***/ }),
