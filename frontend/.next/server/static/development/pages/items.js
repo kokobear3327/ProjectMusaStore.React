@@ -801,7 +801,7 @@ __webpack_require__.r(__webpack_exports__);
 var PriceTag = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.span.withConfig({
   displayName: "PriceTag",
   componentId: "sc-1u9nbeu-0"
-})(["background:", ";color:white;font-weight:600;padding:5px;line-height:1;font-size:3rem;display:inline-block;position:absolute;top:34px;right:34px;"], function (props) {
+})(["background:", ";transform:rotate(3deg);color:white;font-weight:600;padding:5px;line-height:1;font-size:3rem;display:inline-block;position:absolute;top:34px;right:34px;"], function (props) {
   return props.theme.blue;
 });
 /* harmony default export */ __webpack_exports__["default"] = (PriceTag);
