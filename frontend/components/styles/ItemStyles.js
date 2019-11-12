@@ -4,8 +4,9 @@ const Item = styled.div`
   display: flex;
   background: white;
   flex-direction: column;
-  border: 1px solid ${props => props.theme.offWhite};
-  box-shadow: ${props => props.theme.bs};
+  border: 1px solid ${props => props.theme.black};
+  box-shadow: 0 0 56px 12px rgba(1, 10, 0, 0.9);
+  // corner-radius: 12px;
   position: relative;
   img {
     width: 100%;
@@ -13,12 +14,12 @@ const Item = styled.div`
     object-fit: cover;
   }
   p {
+    padding: 0 3rem;
+    font-size: 1.5rem;
     font-size: 12px;
     line-height: 2;
     font-weight: 300;
     flex-grow: 1;
-    padding: 0 3rem;
-    font-size: 1.5rem;
   }
   .buttonList {
     display: grid;

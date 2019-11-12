@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 const NavStyles = styled.ul`
+  font-family: "Advertising Script";
   margin: 0;
   padding: 0;
   display: flex;
@@ -8,6 +9,7 @@ const NavStyles = styled.ul`
   font-size: 2rem;
   a,
   button {
+    font-family: "Advertising Script";
     padding: 1rem 3rem;
     display: flex;
     align-items: center;

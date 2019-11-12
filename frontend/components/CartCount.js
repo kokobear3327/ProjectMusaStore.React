@@ -11,6 +11,7 @@ import styled from 'styled-components';
 //     You get enter, enter-active, exit, and exit-active
 const AnimationStyles = styled.span`
   position: relative;
+  font-family: "Harlend Demo";
   .count {
     display: block;
     position: relative;

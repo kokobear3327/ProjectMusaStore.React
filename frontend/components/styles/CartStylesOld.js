@@ -30,7 +30,7 @@ const CartStyles = styled.div`
     align-items: center;
     font-size: 3rem;
     font-weight: 900;
-    font-family: 'Aisha Script'
+    font-family: 'Advertising Script'
     p {
       margin: 0;
     }

@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 const Title = styled.h3`
   margin: 0 1rem;
+  font-family: "Harlend Demo";
   text-align: center;
   transform: skew(-5deg) rotate(-1deg);
   margin-top: -2rem;
@@ -12,7 +13,7 @@ const Title = styled.h3`
     line-height: 1;
     font-size: 10rem;
 
-    font-family: "Advertising Script";
+    font-family: "Harlend Demo";
     text-align: center;
     color: white;
     padding: 0 1rem;

@@ -26,8 +26,8 @@ const Inner = styled.div`
 
 injectGlobal`
   @font-face {
-    font-family: 'aisha script';
-    src: url('/static/aisha script.ttf') format('ttf');
+    font-family: 'GreatVibes';
+    src: url('/static/GreatVibes.ttf') format('ttf');
     font-weight: normal;
     font-style: normal;
   }
@@ -43,13 +43,13 @@ injectGlobal`
     margin: 0;
     font-size: 1.5rem;
     line-height: 2;
-    font-family: 'aisha script'
+    font-family: 'Harlend Demo';
   }
   a {
     text-decoration: none;
     color: ${theme.black};
   }
-  button {  font-family: 'aisha script'; }
+  button {  font-family: 'Advertising Script'; }
 `;
 
 
