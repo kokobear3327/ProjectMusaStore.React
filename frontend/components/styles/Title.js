@@ -7,10 +7,12 @@ const Title = styled.h3`
   margin-top: -2rem;
   text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
   a {
-    background: ${props => props.theme.blue}; 
+    background: rgba(228, 228, 228,) 
     display: inline;
     line-height: 1;
     font-size: 10rem;
+
+    font-family: "Advertising Script";
     text-align: center;
     color: white;
     padding: 0 1rem;

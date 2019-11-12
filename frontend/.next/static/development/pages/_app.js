@@ -1429,7 +1429,7 @@ __webpack_require__.r(__webpack_exports__);
 var CartStyles = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.withConfig({
   displayName: "CartStyles",
   componentId: "sc-1hysgde-0"
-})(["background:rgba(228,228,228,1);box-shadow:0 0 45px 13px rgba(1,10,0,0.9);height:83.9%;bottom:0;right:0;width:41.2%;min-width:550px;padding:23px;position:fixed;transform:translateX(100%);transition:all 1.5s;z-index:5;display:grid;grid-template-rows:auto;", ";header{border-bottom:12px solid ", ";margin-bottom:-3px;padding-bottom:2rem;}footer{border-top:18px double ", ";margin-top:12px;padding-top:2rem;display:grid;grid-template-columns:auto auto;align-items:center;font-size:3rem;font-weight:500;font-family:'Aisha Script' p{margin:0;}}ul{list-style:none;overflow:scroll;margin:0;padding:0;}"], function (props) {
+})(["background:rgba(228,228,228,1);box-shadow:0 0 45px 13px rgba(1,10,0,0.9);height:83.9%;bottom:0;right:0;width:41.2%;min-width:550px;padding:23px;position:fixed;transform:translateX(100%);transition:all 1.5s;z-index:5;display:grid;grid-template-rows:auto;", ";header{border-bottom:12px solid ", ";margin-bottom:12px;padding-bottom:2rem;}footer{border-top:10px double ", ";margin-top:2rem;padding-top:2rem;display:grid;grid-template-columns:auto auto;align-items:center;font-size:3rem;font-weight:900;font-family:'Aisha Script' p{margin:0;}}ul{list-style:none;overflow:scroll;margin:0;padding:0;}"], function (props) {
   return props.open && "transform: translateX(0);";
 }, function (props) {
   return props.theme.black;
@@ -1454,7 +1454,7 @@ __webpack_require__.r(__webpack_exports__);
 var CloseButton = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].button.withConfig({
   displayName: "CloseButton",
   componentId: "bjpk27-0"
-})(["background:black;color:white;font-size:3rem;border:0;position:absolute;z-index:2;right:0;"]);
+})(["background:black;color:white;font-size:34px;border:0;position:absolute;z-index:2;right:12px;"]);
 /* harmony default export */ __webpack_exports__["default"] = (CloseButton);
 
 /***/ }),
@@ -1498,7 +1498,7 @@ __webpack_require__.r(__webpack_exports__);
 var ProjectmusaButton = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].button.withConfig({
   displayName: "ProjectmusaButton",
   componentId: "sc-13wwur3-0"
-})(["background:blue;color:white;font-weight:500;border:0;border-radius:0;text-transform:uppercase;font-size:2rem;padding:0.8rem 1.5rem;transform:skew(-2deg);display:inline-block;transition:all 0.5s;&[disabled]{opacity:0.5;}"]);
+})(["background:black;color:white;font-weight:500;border:10;border-radius:28px;font-size:23px;font-family:\"Advertising Script\";padding:0.8rem 1.5rem;display:inline-block;transition:all 0.5s;&[disabled]{opacity:0.5;}"]);
 /* harmony default export */ __webpack_exports__["default"] = (ProjectmusaButton);
 
 /***/ }),
