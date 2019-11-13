@@ -116,12 +116,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _User__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./User */ "./components/User.js");
 /* harmony import */ var _TakeMyMoney__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./TakeMyMoney */ "./components/TakeMyMoney.js");
 /* harmony import */ var _styles_Superhumanh3__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./styles/Superhumanh3 */ "./components/styles/Superhumanh3.js");
-/* harmony import */ var _lib_formatMoney__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../lib/formatMoney */ "./lib/formatMoney.js");
-/* harmony import */ var _lib_calcTotalPrice__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../lib/calcTotalPrice */ "./lib/calcTotalPrice.js");
+/* harmony import */ var _lib_structureMonies__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../lib/structureMonies */ "./lib/structureMonies.js");
+/* harmony import */ var _lib_calculateTotalForCart__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../lib/calculateTotalForCart */ "./lib/calculateTotalForCart.js");
 /* harmony import */ var _styles_CloseButton__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./styles/CloseButton */ "./components/styles/CloseButton.js");
 /* harmony import */ var _styles_ProjectmusaButton__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./styles/ProjectmusaButton */ "./components/styles/ProjectmusaButton.js");
 /* harmony import */ var _styles_CartStyles__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./styles/CartStyles */ "./components/styles/CartStyles.js");
-var _jsxFileName = "/Users/Programming_Work_2/Desktop/mod4.2/mod3/frontend/components/Cart.js";
+var _jsxFileName = "/Users/Programming_Work_2/Desktop/mod4.3/mod4.3/frontend/components/Cart.js";
 
 function _templateObject2() {
   var data = _taggedTemplateLiteral(["\n  query {\n    cartOpen @client\n  }\n"]);
@@ -260,7 +260,7 @@ var Cart = function Cart() {
             lineNumber: 72
           },
           __self: this
-        }, Object(_lib_formatMoney__WEBPACK_IMPORTED_MODULE_8__["default"])(Object(_lib_calcTotalPrice__WEBPACK_IMPORTED_MODULE_9__["default"])(me.cart)))), me.cart.length && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_TakeMyMoney__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        }, Object(_lib_structureMonies__WEBPACK_IMPORTED_MODULE_8__["default"])(Object(_lib_calculateTotalForCart__WEBPACK_IMPORTED_MODULE_9__["default"])(me.cart)))), me.cart.length && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_TakeMyMoney__WEBPACK_IMPORTED_MODULE_6__["default"], {
           __source: {
             fileName: _jsxFileName,
             lineNumber: 75
@@ -382,9 +382,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "prop-types");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _lib_formatMoney__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../lib/formatMoney */ "./lib/formatMoney.js");
+/* harmony import */ var _lib_structureMonies__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../lib/structureMonies */ "./lib/structureMonies.js");
 /* harmony import */ var _RemoveFromCart__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./RemoveFromCart */ "./components/RemoveFromCart.js");
-var _jsxFileName = "/Users/Programming_Work_2/Desktop/mod4.2/mod3/frontend/components/CartItem.js";
+var _jsxFileName = "/Users/Programming_Work_2/Desktop/mod4.3/mod4.3/frontend/components/CartItem.js";
 
 
 
@@ -454,13 +454,13 @@ var CartItem = function CartItem(_ref) {
       lineNumber: 42
     },
     __self: this
-  }, Object(_lib_formatMoney__WEBPACK_IMPORTED_MODULE_3__["default"])(cartItem.item.price * cartItem.quantity), ' - ', react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("em", {
+  }, Object(_lib_structureMonies__WEBPACK_IMPORTED_MODULE_3__["default"])(cartItem.item.price * cartItem.quantity), ' - ', react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("em", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 45
     },
     __self: this
-  }, cartItem.quantity, " \xD7 ", Object(_lib_formatMoney__WEBPACK_IMPORTED_MODULE_3__["default"])(cartItem.item.price), " each"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RemoveFromCart__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, cartItem.quantity, " \xD7 ", Object(_lib_structureMonies__WEBPACK_IMPORTED_MODULE_3__["default"])(cartItem.item.price), " each"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_RemoveFromCart__WEBPACK_IMPORTED_MODULE_4__["default"], {
     id: cartItem.id,
     __source: {
       fileName: _jsxFileName,
@@ -1179,14 +1179,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! graphql-tag */ "graphql-tag");
 /* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(graphql_tag__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _lib_calcTotalPrice__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../lib/calcTotalPrice */ "./lib/calcTotalPrice.js");
+/* harmony import */ var _lib_calculateTotalForCart__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../lib/calculateTotalForCart */ "./lib/calculateTotalForCart.js");
 /* harmony import */ var react_stripe_checkout__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-stripe-checkout */ "react-stripe-checkout");
 /* harmony import */ var react_stripe_checkout__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react_stripe_checkout__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var react_apollo__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-apollo */ "react-apollo");
 /* harmony import */ var react_apollo__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react_apollo__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var _User__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./User */ "./components/User.js");
 
-var _jsxFileName = "/Users/Programming_Work_2/Desktop/mod4.2/mod3/frontend/components/TakeMyMoney.js";
+var _jsxFileName = "/Users/Programming_Work_2/Desktop/mod4.3/mod4.3/frontend/components/TakeMyMoney.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -1334,7 +1334,7 @@ function (_React$Component) {
           __self: this
         }, function (createOrder) {
           return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_stripe_checkout__WEBPACK_IMPORTED_MODULE_7___default.a, {
-            amount: me.cart.length && Object(_lib_calcTotalPrice__WEBPACK_IMPORTED_MODULE_6__["default"])(me.cart),
+            amount: me.cart.length && Object(_lib_calculateTotalForCart__WEBPACK_IMPORTED_MODULE_6__["default"])(me.cart),
             name: "Project Musa",
             description: "Order of ".concat(totalItems(me.cart), " items!"),
             image: me.cart.length && me.cart[0].item && me.cart[0].item.image,
@@ -1554,17 +1554,17 @@ var perPage = 4;
 
 /***/ }),
 
-/***/ "./lib/calcTotalPrice.js":
-/*!*******************************!*\
-  !*** ./lib/calcTotalPrice.js ***!
-  \*******************************/
+/***/ "./lib/calculateTotalForCart.js":
+/*!**************************************!*\
+  !*** ./lib/calculateTotalForCart.js ***!
+  \**************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return calcTotalPrice; });
-function calcTotalPrice(cart) {
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return calculateTotalForCart; });
+function calculateTotalForCart(cart) {
   return cart.reduce(function (tally, cartItem) {
     if (!cartItem.item) return tally;
     return tally + cartItem.quantity * cartItem.item.price;
@@ -1573,10 +1573,10 @@ function calcTotalPrice(cart) {
 
 /***/ }),
 
-/***/ "./lib/formatMoney.js":
-/*!****************************!*\
-  !*** ./lib/formatMoney.js ***!
-  \****************************/
+/***/ "./lib/structureMonies.js":
+/*!********************************!*\
+  !*** ./lib/structureMonies.js ***!
+  \********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 

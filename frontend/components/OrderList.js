@@ -1,6 +1,6 @@
 import React from 'react';
 import gql from 'graphql-tag';
-import formatMoney from '../lib/formatMoney';
+import structureMonies from '../lib/structureMonies';
 import Link from 'next/link';
 import styled from 'styled-components';
 import { Query } from 'react-apollo';
@@ -54,7 +54,7 @@ class OrderList extends React.Component {
                                                {/* So this tells you how many items in each order.  Bug though...*/}
                                               {/* <p>{order.items.reduce((x,y) => x + y.quantity), 0} Items in order</p> */}
                                               <p> {formatDistance(order.createdAt, new Date())}</p>
-                                              <p>{formatMoney(order.total)}</p>
+                                              <p>{structureMonies(order.total)}</p>
                                            </div>
                                            <div className="image">
                                                {/* {order.items.map(item => (

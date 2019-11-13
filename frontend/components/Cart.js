@@ -7,8 +7,8 @@ import User from './User';
 import TakeMyMoney from './TakeMyMoney';
 // Styled-Components:
 import Superhumanh3 from './styles/Superhumanh3';
-import formatMoney from '../lib/formatMoney';
-import calcTotalPrice from '../lib/calcTotalPrice';
+import structureMonies from '../lib/structureMonies';
+import calculateTotalForCart from '../lib/calculateTotalForCart';
 import CloseButton from './styles/CloseButton';
 import ProjectmusaButton from './styles/ProjectmusaButton';
 import CartStyles from './styles/CartStyles';
@@ -69,7 +69,7 @@ const Cart = () => (
     <ul>{me.cart.map(cartItem => <CartItem cartItem={cartItem} key={cartItem.id} />)}</ul>
   <footer>
 {/* Holy Cow, you gotta wrap the total price in the format monies func such that its not in cents 👍 */}
-    <p>{formatMoney(calcTotalPrice(me.cart))}</p>
+    <p>{structureMonies(calculateTotalForCart(me.cart))}</p>
   </footer>
       {me.cart.length && (
                 <TakeMyMoney>

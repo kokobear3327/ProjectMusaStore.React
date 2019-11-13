@@ -4,7 +4,7 @@ import { Query } from 'react-apollo';
 import { format } from 'date-fns';
 import Head from 'next/head';
 import gql from 'graphql-tag';
-import formatMoney from '../lib/formatMoney';
+import structureMonies from '../lib/structureMonies';
 // import Error from './ErrorMessage';
 import OrderStyles from './styles/OrderStyles';
 
@@ -62,7 +62,7 @@ class Order extends React.Component {
                       </p>
                       <p>
                         <span>Your Bill:</span>
-                        <span>{formatMoney(order.total)}</span>
+                        <span>{structureMonies(order.total)}</span>
                       </p>
                       <p>
                         <span>Item Count</span>
@@ -75,8 +75,8 @@ class Order extends React.Component {
                             <div className="item-details">
                               <h2>{item.title}</h2>
                               <p>Qty: {item.quantity}</p>
-                              <p>Each: {formatMoney(item.price)}</p>
-                              <p>SubTotal: {formatMoney(item.price * item.quantity)}</p>
+                              <p>Each: {structureMonies(item.price)}</p>
+                              <p>SubTotal: {structureMonies(item.price * item.quantity)}</p>
                               <p>{item.description}</p>
                             </div>
                           </div>

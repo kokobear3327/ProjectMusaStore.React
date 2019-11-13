@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -106,7 +106,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! graphql-tag */ "graphql-tag");
 /* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(graphql_tag__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _lib_formatMoney__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../lib/formatMoney */ "./lib/formatMoney.js");
+/* harmony import */ var _lib_structureMonies__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../lib/structureMonies */ "./lib/structureMonies.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/link */ "next/link");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! styled-components */ "styled-components");
@@ -116,7 +116,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! date-fns */ "date-fns");
 /* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(date_fns__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _styles_OrderItemStyles__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./styles/OrderItemStyles */ "./components/styles/OrderItemStyles.js");
-var _jsxFileName = "/Users/Programming_Work_2/Desktop/mod4.2/mod3/frontend/components/OrderList.js";
+var _jsxFileName = "/Users/Programming_Work_2/Desktop/mod4.3/mod4.3/frontend/components/OrderList.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -267,7 +267,7 @@ function (_React$Component) {
               lineNumber: 57
             },
             __self: this
-          }, Object(_lib_formatMoney__WEBPACK_IMPORTED_MODULE_2__["default"])(order.total))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          }, Object(_lib_structureMonies__WEBPACK_IMPORTED_MODULE_2__["default"])(order.total))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             className: "image",
             __source: {
               fileName: _jsxFileName,
@@ -311,10 +311,10 @@ var OrderItemStyles = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.l
 
 /***/ }),
 
-/***/ "./lib/formatMoney.js":
-/*!****************************!*\
-  !*** ./lib/formatMoney.js ***!
-  \****************************/
+/***/ "./lib/structureMonies.js":
+/*!********************************!*\
+  !*** ./lib/structureMonies.js ***!
+  \********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -346,7 +346,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_OrderList__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/OrderList */ "./components/OrderList.js");
-var _jsxFileName = "/Users/Programming_Work_2/Desktop/mod4.2/mod3/frontend/pages/history.js";
+var _jsxFileName = "/Users/Programming_Work_2/Desktop/mod4.3/mod4.3/frontend/pages/history.js";
 
 
 
@@ -370,7 +370,7 @@ var OrderPage = function OrderPage(props) {
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!********************************!*\
   !*** multi ./pages/history.js ***!
   \********************************/

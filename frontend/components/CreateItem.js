@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
 import Form from './styles/Form';
-import formatMoney from '../lib/formatMoney';
+import structureMonies from '../lib/structureMonies';
 // import Error from './ErrorMessage';
 import Router from 'next/router';
 

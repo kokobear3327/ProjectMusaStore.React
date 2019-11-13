@@ -3,7 +3,7 @@ import Router from 'next/router';
 import NProgress from 'nprogress';
 import PropTypes from 'prop-types';
 import gql from 'graphql-tag';
-import calcTotalPrice from '../lib/calcTotalPrice';
+import calculateTotalForCart from '../lib/calculateTotalForCart';
 // import Error from './ErrorMessage';
 import StripeCheckout from 'react-stripe-checkout';
 import { Mutation } from 'react-apollo';
@@ -55,7 +55,7 @@ class TakeMyMoney extends React.Component {
             >
               {createOrder => (
                 <StripeCheckout
-                  amount={me.cart.length && calcTotalPrice(me.cart)}
+                  amount={me.cart.length && calculateTotalForCart(me.cart)}
                   name="Project Musa"
                   description={`Order of ${totalItems(me.cart)} items!`}
                   image={me.cart.length && me.cart[0].item && me.cart[0].item.image}
