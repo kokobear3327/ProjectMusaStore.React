@@ -1620,9 +1620,7 @@ __webpack_require__.r(__webpack_exports__);
 var Superhumanh3 = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.h3.withConfig({
   displayName: "Superhumanh3",
   componentId: "sc-13b25oy-0"
-})(["background:", ";color:white;display:inline-block;padding:4px 5px;transform:skew(-3deg);margin:0;font-size:4rem;"], function (props) {
-  return props.theme.blue;
-});
+})(["color:black;display:inline-block;padding:4px 5px;transform:skew(-4deg);margin:0;font-size:4rem;"]);
 /* harmony default export */ __webpack_exports__["default"] = (Superhumanh3);
 
 /***/ }),
