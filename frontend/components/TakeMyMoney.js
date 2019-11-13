@@ -4,7 +4,7 @@ import NProgress from 'nprogress';
 import PropTypes from 'prop-types';
 import gql from 'graphql-tag';
 import calcTotalPrice from '../lib/calcTotalPrice';
-import Error from './ErrorMessage';
+// import Error from './ErrorMessage';
 import StripeCheckout from 'react-stripe-checkout';
 import { Mutation } from 'react-apollo';
 import User, { CURRENT_USER_QUERY } from './User';

@@ -3,7 +3,7 @@ import { Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
 import Form from './styles/Form';
 import formatMoney from '../lib/formatMoney';
-import Error from './ErrorMessage';
+// import Error from './ErrorMessage';
 import Router from 'next/router';
 
 // So the mutation(createItem) and query(whatever you defined in schema) have to return...
@@ -91,7 +91,7 @@ export default class CreateItem extends Component {
         // })
 
       }}>
-        <Error error={error} />
+        {/* <Error error={error} /> */}
         <fieldset disabled={loading} aria-busy={true}>
         <br></br>
           <label htmlFor="title">

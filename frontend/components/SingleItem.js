@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
 import styled from 'styled-components';
-import Error from './ErrorMessage';
+// import Error from './ErrorMessage';
 import Head from 'next/head'
 
 // So we gotta use SideEffects to change the title tag from the head...So oyu put the head tag in there with the desired title

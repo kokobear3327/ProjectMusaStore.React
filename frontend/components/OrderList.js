@@ -5,7 +5,7 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import { Query } from 'react-apollo';
 import { formatDistance } from 'date-fns';
-import Error from './ErrorMessage';
+// import Error from './ErrorMessage';
 import OrderItemStyles from './styles/OrderItemStyles';
 
 const OrderUl = styled.ul`
