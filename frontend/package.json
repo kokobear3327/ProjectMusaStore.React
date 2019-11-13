@@ -6,10 +6,7 @@
   "scripts": {
     "dev": "next -p 1777",
     "build": "next build",
-    "start": "next start",
-    "test": "NODE_ENV=test jest --watch",
-    "test-win": "SET NODE_ENV=test&& jest --watch",
-    "heroku-postbuild": "next build"
+    "start": "next start"
   },
   "author": "",
   "license": "ISC",
@@ -43,22 +40,7 @@
     "babel-jest": "^23.6.0",
     "babel-plugin-module-resolver": "^3.1.1",
     "casual": "^1.5.19",
-    "enzyme-to-json": "^3.3.4",
-    "graphql-tools": "^4.0.0",
-    "jest": "^23.6.0",
-    "jest-transform-graphql": "^2.1.0"
-  },
-  "jest": {
-    "setupTestFrameworkScriptFile": "<rootDir>/jest.setup.js",
-    "testPathIgnorePatterns": [
-      "<rootDir>/.next/",
-      "<rootDir>/node_modules/"
-    ],
-    "transform": {
-      "\\.(gql|graphql)$": "jest-transform-graphql",
-      ".*": "babel-jest",
-      "^.+\\.js?$": "babel-jest"
-    }
+    "graphql-tools": "^4.0.0"
   },
   "//": "Babel config",
   "babel": {
