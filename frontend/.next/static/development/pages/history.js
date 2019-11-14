@@ -42245,7 +42245,7 @@ var OrderPage = function OrderPage(props) {
 
 /***/ }),
 
-/***/ 6:
+/***/ 5:
 /*!********************************!*\
   !*** multi ./pages/history.js ***!
   \********************************/
@@ -42270,5 +42270,5 @@ module.exports = dll_5d62d38be3592dca3a42;
 
 /***/ })
 
-},[[6,"static/runtime/webpack.js"]]]));;
+},[[5,"static/runtime/webpack.js"]]]));;
 //# sourceMappingURL=history.js.map

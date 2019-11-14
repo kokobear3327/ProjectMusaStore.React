@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -368,7 +368,7 @@ var OrderPage = function OrderPage(props) {
 
 /***/ }),
 
-/***/ 6:
+/***/ 5:
 /*!********************************!*\
   !*** multi ./pages/history.js ***!
   \********************************/
