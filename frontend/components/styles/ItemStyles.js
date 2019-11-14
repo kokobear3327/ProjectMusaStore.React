@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const Item = styled.div`
   border: 1px solid ${props => props.theme.black};
-  box-shadow: 0 0 76px 24px rgba(1, 10, 0, 0.9);
+  box-shadow: 0 0 76px 30px rgba(1, 10, 0, 0.9);
   display: flex;
   background: rgba(1, 1, 0, 0.2101);
   flex-direction: column;

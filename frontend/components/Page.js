@@ -3,6 +3,8 @@ import styled, { ThemeProvider, injectGlobal } from 'styled-components';
 import Header from './Header';
 import Meta from './Meta';
 
+// Header is where the favicon component comes into play 👍
+
 const theme = {
   blue: '#0017DE',
   black: '#393939',

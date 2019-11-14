@@ -9,6 +9,8 @@ import { formatDistance } from 'date-fns';
 import OrderItemStyles from './styles/OrderItemStyles';
 
 const OrderUl = styled.ul`
+  /* border: 1px solid ${props => props.theme.black};
+  box-shadow: 0 0 76px 24px rgba(1, 10, 0, 0.9); */
     grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
     display: grid;
     grid-gap: 4rem;

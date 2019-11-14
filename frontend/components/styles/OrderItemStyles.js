@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 
 const OrderItemStyles = styled.li`
-  box-shadow: ${props => props.theme.bs};
+  border: 2px solid ${props => props.theme.black};
+  box-shadow: 0 0 66px 12px rgba(1, 10, 0, 0.9);
   list-style: none;
   padding: 2rem;
-  border: 1px solid ${props => props.theme.offWhite};
-  h2 {
+  /* border: 1px solid ${props => props.theme.offWhite}; */
+  h1 {
     border-bottom: 2px solid blue;
     margin-top: 0;
     margin-bottom: 2rem;

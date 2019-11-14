@@ -20,9 +20,9 @@ const Nav = () => (
             <Link href="/history">
               <a>History</a>
             </Link>
-            <Link href="/admin">
+            {/* <Link href="/admin">
               <a>Admin</a>
-            </Link>
+            </Link> */}
 
             <Signout />
             <Mutation mutation={TOGGLE_CART_MUTATION}>
