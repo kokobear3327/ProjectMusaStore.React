@@ -11,7 +11,7 @@ const Title = styled.h3`
     background: rgba(228, 228, 228,) 
     // display: inline;
     // line-height: 1;
-    font-size: 5rem;
+    font-size: 17px;
     font-family: "Advertising Script";
     text-align: center;
     color: black;

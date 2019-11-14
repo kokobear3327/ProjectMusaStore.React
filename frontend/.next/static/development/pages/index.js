@@ -16,7 +16,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! graphql-tag */ "./node_modules/graphql-tag/src/index.js");
 /* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(graphql_tag__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _User__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./User */ "./components/User.js");
-var _jsxFileName = "/Users/Programming_Work_2/Desktop/mod4.3/mod4.3/frontend/components/AddToCart.js";
+var _jsxFileName = "/Users/Programming_Work_2/Desktop/mod5/mod5/frontend/components/AddToCart.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -127,7 +127,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_PriceTag__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./styles/PriceTag */ "./components/styles/PriceTag.js");
 /* harmony import */ var _lib_structureMonies__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../lib/structureMonies */ "./lib/structureMonies.js");
 /* harmony import */ var _AddToCart__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./AddToCart */ "./components/AddToCart.js");
-var _jsxFileName = "/Users/Programming_Work_2/Desktop/mod4.3/mod4.3/frontend/components/Item.js";
+var _jsxFileName = "/Users/Programming_Work_2/Desktop/mod5/mod5/frontend/components/Item.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -279,7 +279,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Item__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Item */ "./components/Item.js");
 /* harmony import */ var _Pagination__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Pagination */ "./components/Pagination.js");
 /* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../config */ "./config.js");
-var _jsxFileName = "/Users/Programming_Work_2/Desktop/mod4.3/mod4.3/frontend/components/Items.js";
+var _jsxFileName = "/Users/Programming_Work_2/Desktop/mod5/mod5/frontend/components/Items.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -443,7 +443,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_PaginationStyles__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./styles/PaginationStyles */ "./components/styles/PaginationStyles.js");
 /* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! graphql-tag */ "./node_modules/graphql-tag/src/index.js");
 /* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(graphql_tag__WEBPACK_IMPORTED_MODULE_6__);
-var _jsxFileName = "/Users/Programming_Work_2/Desktop/mod4.3/mod4.3/frontend/components/Pagination.js";
+var _jsxFileName = "/Users/Programming_Work_2/Desktop/mod5/mod5/frontend/components/Pagination.js";
 
 function _templateObject() {
   var data = _taggedTemplateLiteral(["\n    query PAGINATION_QUERY {\n        itemsConnection {\n            aggregate {\n                count\n            }\n        }\n    }\n"]);
@@ -654,10 +654,10 @@ __webpack_require__.r(__webpack_exports__);
 var Item = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.withConfig({
   displayName: "ItemStyles__Item",
   componentId: "sc-14nvkdp-0"
-})(["border:1px solid ", ";box-shadow:0 0 76px 30px rgba(1,10,0,0.9);display:flex;background:rgba(1,1,0,0.2101);flex-direction:column;position:relative;img{width:100%;height:400px;object-fit:cover;}p{padding:0 3rem;font-size:1.5rem;font-size:17px;line-height:1.4;font-weight:300;flex-grow:1;}.buttonList{display:grid;width:100%;border-top:1px solid ", ";grid-template-columns:repeat(auto-fit,minmax(100px,1fr));grid-gap:1px;background:", ";& > *{background:white;border:0;font-size:1rem;padding:1rem;}}"], function (props) {
+})(["border:3px solid ", ";box-shadow:0 0 76px 35px rgba(1,10,0,0.9);display:flex;background:rgba(1,1,0,0.2101);flex-direction:column;position:relative;img{width:100%;height:400px;object-fit:cover;}p{padding:0 3rem;font-size:1.5rem;font-size:17px;line-height:1.4;font-weight:300;flex-grow:1;}.buttonList{display:grid;width:100%;border-top:3px solid ", ";grid-template-columns:repeat(auto-fit,minmax(100px,1fr));grid-gap:3px;background:", ";& > *{background:white;border:0;font-size:16px;padding:1rem;}}"], function (props) {
   return props.theme.black;
 }, function (props) {
-  return props.theme.lightgrey;
+  return props.theme.black;
 }, function (props) {
   return props.theme.lightgrey;
 });
@@ -679,7 +679,7 @@ __webpack_require__.r(__webpack_exports__);
 var PaginationStyles = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.withConfig({
   displayName: "PaginationStyles",
   componentId: "sc-16vail6-0"
-})(["text-align:center;display:inline-grid;grid-template-columns:repeat(4,auto);align-items:stretch;justify-content:center;align-content:center;margin:2rem 0;border:1px solid ", ";border-radius:10px;& > *{margin:0;padding:15px 30px;border-right:1px solid ", ";&:last-child{border-right:0;}}a[aria-disabled='true']{color:grey;pointer-events:none;}"], function (props) {
+})(["box-shadow:0 0 66px 23px rgba(1,10,0,0.9);font-size:17px;text-align:center;display:inline-grid;grid-template-columns:repeat(4,auto);align-items:stretch;justify-content:center;align-content:center;margin:2rem 0;border:2px solid ", ";border-radius:34px;& > *{margin:0;padding:15px 30px;border-right:1px solid ", ";&:last-child{border-right:0;}}a[aria-disabled='true']{color:grey;pointer-events:none;}"], function (props) {
   return props.theme.lightgrey;
 }, function (props) {
   return props.theme.lightgrey;
@@ -721,7 +721,7 @@ __webpack_require__.r(__webpack_exports__);
 var Title = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h3.withConfig({
   displayName: "Title",
   componentId: "sc-1dg2d8c-0"
-})(["margin:0 1rem;font-family:\"Advertising Script\";text-align:center;transform:skew(-5deg) rotate(-1deg);text-shadow:2px 2px 0 rgba(0,0,0,0.1);a{background:rgba(228,228,228,)  font-size:5rem;font-family:\"Advertising Script\";text-align:center;color:black;padding:0 1rem;}"]);
+})(["margin:0 1rem;font-family:\"Advertising Script\";text-align:center;transform:skew(-5deg) rotate(-1deg);text-shadow:2px 2px 0 rgba(0,0,0,0.1);a{background:rgba(228,228,228,)  font-size:17px;font-family:\"Advertising Script\";text-align:center;color:black;padding:0 1rem;}"]);
 /* harmony default export */ __webpack_exports__["default"] = (Title);
 
 /***/ }),
@@ -29809,7 +29809,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_Items__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Items */ "./components/Items.js");
-var _jsxFileName = "/Users/Programming_Work_2/Desktop/mod4.3/mod4.3/frontend/pages/index.js";
+var _jsxFileName = "/Users/Programming_Work_2/Desktop/mod5/mod5/frontend/pages/index.js";
 
 
  // parseFloat cuz its otherwise a stringy number 👍

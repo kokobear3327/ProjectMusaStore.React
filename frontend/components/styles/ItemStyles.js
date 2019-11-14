@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 const Item = styled.div`
-  border: 1px solid ${props => props.theme.black};
-  box-shadow: 0 0 76px 30px rgba(1, 10, 0, 0.9);
+  border: 3px solid ${props => props.theme.black};
+  box-shadow: 0 0 76px 35px rgba(1, 10, 0, 0.9);
   display: flex;
   background: rgba(1, 1, 0, 0.2101);
   flex-direction: column;
@@ -24,14 +24,14 @@ const Item = styled.div`
   .buttonList {
     display: grid;
     width: 100%;
-    border-top: 1px solid ${props => props.theme.lightgrey};
+    border-top: 3px solid ${props => props.theme.black};
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    grid-gap: 1px;
+    grid-gap: 3px;
     background: ${props => props.theme.lightgrey};
     & > * {
       background: white;
       border: 0;
-      font-size: 1rem;
+      font-size: 16px;
       padding: 1rem;
     }
   }
